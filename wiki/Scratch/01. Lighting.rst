@@ -1,36 +1,24 @@
-1 Project : Lighting System
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Let's start our first project, lighting system.**
+**Commençons notre premier projet, un système d’éclairage.**
 
 --------------
 
-Lighting up an LED is one of the most fundamental Arduino practice.
+Allumer une LED est l’un des exercices Arduino les plus fondamentaux.
 
-This start-up lesson is designed for beginners to understand hardware
-and software programming on ESP32 development board and to master basic
-circuit and programming knowledge.
+Cette leçon d’introduction est conçue pour les débutants afin de comprendre le matériel et la programmation logicielle sur la carte de développement ESP32 et d’acquérir les connaissances de base en circuits et en programmation.
 
 .. image:: ./scratch_img/cout1.png
    :alt: img
 
-Therefore, our tutorial guidance is simple. And this intriguing project
-can be applied in actual scenarios at home or in office.
+Ainsi, nos instructions sont simples. Et ce projet stimulant peut être appliqué à la maison ou au bureau.
 
-In this project, you will have learned the basic connections and
-settings of the ESP32 development board in the Arduino programming.
-What's more, some functions will also be presented for you, such as
-lighting on/off an LED via the output level of a digital pin or by a
-button.
+Dans ce projet, vous apprendrez les connexions et réglages de base de la carte ESP32 dans la programmation Arduino. De plus, certaines fonctions vous seront présentées, comme allumer/éteindre une LED via le niveau de sortie d’une broche numérique ou par un bouton.
 
-All in all, this is an entry-level tutorial to lay the foundation for
-subsequent Arduino practices.
+En somme, il s’agit d’un tutoriel de niveau débutant pour poser les bases des pratiques Arduino ultérieures.
 
 --------------
 
-
-
-1.1 Flow Diagram
+1.1 Schéma de flux
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: ./scratch_img/image-20230607175228556.png
@@ -38,90 +26,78 @@ subsequent Arduino practices.
 
 --------------
 
+1.2 Allumer une LED
+^^^^^^^^^^^^^^^^^^^
 
+**Description :**
 
-1.2 Light up an LED
-^^^^^^^^^^^^^^^^^^^^^
+LED, abréviation de "Light Emitting Diode" (diode électroluminescente), est un semi-conducteur à l’état solide qui convertit l’énergie électrique en lumière visible, d’où le nom d’éclairage à semi-conducteurs.
 
-**Description:**
+Lorsque le courant traverse une LED, elle s’allume.
 
-LED, short for Light Emitting Diode, is a solid-state semiconductor that
-converts electrical energy into visible light, so it is also called
-solid-state lighting.
-
-When current passes through an LED, it light up.
-
-**Various LED:**
+**Différents types de LED :**
 
 .. image:: ./scratch_img/cou1.png
    :alt: img
 
 --------------
 
-**LED module** is a device to output, whose brightness and blinks can be
-controlled. For how to use, you only need to directly plug it into
-digital output pins on the development board.
+Le **module LED** est un dispositif de sortie dont la luminosité et les clignotements peuvent être contrôlés. Pour l’utiliser, il suffit de le brancher directement sur les broches de sortie numérique de la carte de développement.
 
 .. image:: ./scratch_img/cou12.png
    :alt: img
 
 --------------
 
-**Working principle:**
+**Principe de fonctionnement :**
 
-When S is at a high level, Q1 triode is into conduction, and VCC voltage
-passes through LED to light up it.
+Quand S est à un niveau haut, le transistor Q1 conduit, et la tension VCC traverse la LED pour l’allumer.
 
 .. image:: ./scratch_img/couy1.png
    :alt: img
 
-**Parameters:**
+**Paramètres :**
 
--  Voltage: 3~5V
--  Current: ≤1.5mA
--  Power: 0.07W
+- Tension : 3~5V
+- Courant : ≤1.5mA
+- Puissance : 0.07W
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the LED module to io27.**
+**Connectez le module LED à io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj1.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
--  Open Kidsblock and choose the correct device and port.
+- Ouvrez Kidsblock et choisissez le bon appareil et port.
 
    .. image:: ./scratch_img/st1.png
       :alt: img
 
--  Drag |image19| from |image20| to the code editing area. Code Blocks
-   execute only when they are in this area.
+- Faites glisser |image19| depuis |image20| dans la zone d’édition du code. Les blocs de code ne s’exécutent que lorsqu’ils sont dans cette zone.
 
    .. image:: ./scratch_img/st12.png
       :alt: img
 
--  With this block, when booting the development board, code will run.
+- Avec ce bloc, au démarrage de la carte, le code s’exécutera.
 
    .. image:: ./scratch_img/st11.png
       :alt: img
 
--  In |image21|, drag “\ **forever**\ ” and paste it below the previous
-   block. Block “\ **forever**\ ” indicates a loop.
+- Dans |image21|, faites glisser “**forever**” et placez-le sous le bloc précédent. Le bloc “**forever**” indique une boucle.
 
    .. image:: ./scratch_img/st20.png
       :alt: img
 
--  Drag an "**LED pin output**" block from |image22| and paste it in
-   “\ **forever**\ ”. Set the pin to IO27 and output level to HIGH, so
-   that the LED pin will continue to output high level.
+- Faites glisser un bloc "**Sortie de la broche LED**" depuis |image22| et placez-le dans “**forever**”. Réglez la broche sur IO27 et le niveau de sortie sur HIGH, la LED restera donc allumée.
 
 .. image:: ./scratch_img/st21.png
    :alt: img
@@ -129,387 +105,306 @@ GND. Do not reverse them!**
 .. image:: ./scratch_img/st22-1.png
    :alt: img
 
--  Add a 1s delay. Duplicate the "**LED pin output**" block but set the
-   output to LOW, and also add a delay. Then LED will light up and go
-   off in circulation.
+- Ajoutez un délai d’1 seconde. Dupliquez le bloc "**Sortie de la broche LED**" mais réglez la sortie sur LOW, puis ajoutez également un délai. Ainsi, la LED s’allumera et s’éteindra en boucle.
 
    .. image:: ./scratch_img/st22.png
       :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-LED blinks per second, because io27 on ESP32 board outputs high and low
-level alternatively every second. Besides, various interactive
-applications can also be realized via an LED, like breathing LED, water
-flow lights and flashing police light.
+La LED clignote chaque seconde, car io27 sur la carte ESP32 alterne entre un niveau haut et bas toutes les secondes. De plus, diverses applications interactives peuvent être réalisées via une LED, telles que la LED respirante, les lumières "water flow" et les gyrophares.
 
 .. container:: table-wrapper
 
-   =========== =======
-   Power Level Result
-   =========== =======
-   HIGH        LED on
-   LOW         LED off
-   =========== =======
+=========== =======
+Niveau      Résultat
+=========== =======
+HIGH        LED allumée
+LOW         LED éteinte
+=========== =======
 
 --------------
 
-**Expansion: Breathing LED**
+**Extension : LED respirante**
 
-**Description:**
+**Description :**
 
-IO interfaces of MCU (arduino UNO, ESP32 and Raspberry Pi Pico) output
-only digital signals (high or low level). For instance, in previous
-experiment (light up an LED), the digital outputs are only HIGH(3.3V)
-and LOW(0V).
+Les interfaces IO des MCU (arduino UNO, ESP32 et Raspberry Pi Pico) n’émettent que des signaux numériques (haut ou bas). Par exemple, dans l’expérience précédente (allumer une LED), les sorties numériques sont uniquement HIGH (3.3V) et LOW (0V).
 
-If MCU outputs a high level of 3.3V or a low level of 0V, the input
-voltage should be at 0~3.3V. Thus, PWM (**Pulse Width Modulation**) is
-needed to output different voltage value, which is called "analog
-output".
+Si le MCU fournit un niveau haut de 3.3V ou un niveau bas de 0V, la tension d’entrée doit être comprise entre 0~3.3V. Ainsi, le PWM (**Modulation de largeur d’impulsion**) est nécessaire pour générer différentes valeurs de tension, ce qu’on appelle la "sortie analogique".
 
 .. image:: ./scratch_img/cou1k1.png
    :alt: img
 
 --------------
 
-**Knowledge:**
+**Connaissances :**
 
-What is PWM?
+Qu’est-ce que le PWM ?
 
-PWM contains three elements: Frequency(Hz), Period, Duty Cycle(%).
+Le PWM comporte trois éléments : Fréquence (Hz), Période, Rapport cyclique (%).
 
--  **PWM Frequency (f):** the times of signal changing from high to low
-   and return to high within one second. Generally speaking, Frequency
-   is the number of PWM Period in a second.
+- **Fréquence PWM (f) :** nombre de changements du signal de haut en bas et retour à haut en une seconde. En général, la fréquence est le nombre de périodes PWM par seconde.
 
--  **PWM Period (T):** Period = 1 / Frequency (T=1/f, and 1 means 1
-   second). For instance: f = 50Hz, so T = 20ms, which implies there are
-   50 times of Period per second.
+- **Période PWM (T) :** Période = 1 / Fréquence (T=1/f, et 1 signifie 1 seconde). Par exemple : f = 50Hz, donc T = 20ms, ce qui implique 50 périodes par seconde.
 
--  **PWM Duty Cycle:** the time ratio of HIGH to the whole Period. If
-   Period = 10ms and 8ms is pulse width time, Low level occupies 2ms, so
-   the Duty Cycle = 8/(8+2) = 80%.
+- **Rapport cyclique PWM :** ratio du temps haut sur la totalité de la période. Si la période = 10ms et le temps d’impulsion est de 8ms, le niveau bas occupe 2ms, donc le rapport cyclique = 8/(8+2) = 80%.
 
 .. image:: ./scratch_img/cou1k2.png
    :alt: img
 
-**Conclusion: At an appropriate signal frequency, PWM changes effective
-output voltage by changing the duty cycle in one period.** In plain
-English, within a specified time, the more high level the IO port
-outputs, the greater PWM value is, and the lighter LED will be.
+**Conclusion : À une fréquence de signal appropriée, le PWM modifie la tension de sortie effective en changeant le rapport cyclique pendant une période.** En termes simples, plus la broche IO reste à un niveau haut dans un temps donné, plus la valeur PWM est élevée, et plus la LED sera lumineuse.
 
 .. image:: ./scratch_img/cou1k3.png
    :alt: img
 
-**Test Code:**
+**Code de test :**
 
 .. image:: ./scratch_img/st23.png
    :alt: img
 
--  Define a variable **item** and assign it to 0.
+- Définissez une variable **item** et affectez-lui la valeur 0.
 
    .. image:: ./scratch_img/st25.png
       :alt: img
 
--  Drag a "**forever**" block and paste a "**repeat**" block in it. Set
-   repeat times to 255.
+- Faites glisser un bloc "**forever**" et placez un bloc "**repeat**" à l’intérieur. Réglez le nombre de répétitions à 255.
 
    .. image:: ./scratch_img/st26.png
       :alt: img
 
--  Drag a "**variable mode**" block in "**repeat**" and set the mode to
-   “\ **++**\ ”, which means **item** will increase 1 after each
-   execution.
+- Faites glisser un bloc "**mode variable**" dans "**repeat**" et réglez le mode sur “**++**”, ce qui signifie que **item** augmente de 1 à chaque exécution.
 
    .. image:: ./scratch_img/st27.png
       :alt: img
 
--  Find the block to set PWM which is contained in |image23| as shown
-   below, so you only need to set corresponding pin and analog value to
-   output PWM.
+- Trouvez le bloc pour régler le PWM qui se trouve dans |image23| comme ci-dessous, il suffit de régler la broche et la valeur analogique pour générer du PWM.
 
    .. image:: ./scratch_img/st28.png
       :alt: img
 
-   -  Set LED pin:
+   - Réglez la broche LED :
 
       .. image:: ./scratch_img/st29.png
          :alt: img
 
-   -  Set channel: (16 channels in total: including 0~15)
+   - Réglez le canal : (16 canaux au total : 0~15)
 
       .. image:: ./scratch_img/st30.png
          :alt: img
 
-   -  Set PWM output value to **item**, which will automatically add 1
-      from 0 to 255. **PWM output is 0~255, so we set the repeat times
-      to 255.**
+   - Réglez la valeur PWM à **item**, qui augmentera automatiquement de 0 à 255. **PWM sort de 0~255, donc on répète 255 fois.**
 
       .. image:: ./scratch_img/st31.png
          :alt: img
 
--  Add a delay to 0.01s, so that LED will light up gradually rather than
-   all of a sudden.
+- Ajoutez un délai de 0.01s, pour que la LED s’allume progressivement au lieu de s’allumer d’un coup.
 
    .. image:: ./scratch_img/st32.png
       :alt: img
 
--  Duplicate the "**repeat**" block as follows, but set mode to
-   "**－－**", which decreases variable **item** each time. And LED will
-   dim gradually.
+- Dupliquez le bloc "**repeat**" comme ci-dessous, mais réglez le mode sur "**－－**", ce qui diminue la variable **item** à chaque fois. Ainsi, la LED s’éteindra progressivement.
 
    .. image:: ./scratch_img/st33.png
       :alt: img
 
-**Test Result**
+**Résultat du test**
 
-LED lights up and dims gradually; it breathes evenly.
+La LED s’allume et s’éteint progressivement ; elle "respire" de façon régulière.
 
 .. image:: ./scratch_img/st3gif
    :alt: img
 
 --------------
 
-
-
-1.4 A Button
-^^^^^^^^^^^^^^
+1.4 Un bouton
+^^^^^^^^^^^^^
 
 **Description**
 
-**Button Module** is a device to input. MCU reads its power level to
-detect whether the button is pressed.
+Le **module bouton** est un dispositif d’entrée. Le MCU lit son niveau pour détecter si le bouton est pressé.
 
 .. image:: ./scratch_img/cou13.png
    :alt: img
 
 --------------
 
-**Schematic Diagram:**
+**Schéma électronique :**
 
 .. image:: ./scratch_img/couy12.png
    :alt: img
 
-**Parameters:**
+**Paramètres :**
 
--  Voltage: 3~5V
--  Current: ≤1.1mA
--  Power: ≤5.5mW
-
---------------
-
-**The principle of the button module is a circuit controlled by this
-button.**
-
--  **When the button is pressed**, the circuit is in closed state so
-   that current passes through the button to GND, which causes the
-   digital input pin to detect a low level.
--  **When the button is released**, the circuit is cut and pin level
-   increases due to a pull-up resistor, which makes the digital pin to
-   detect a high level.
+- Tension : 3~5V
+- Courant : ≤1.1mA
+- Puissance : ≤5.5mW
 
 --------------
 
-**Wiring Diagram:**
+**Le principe du module bouton est un circuit contrôlé par ce bouton.**
 
-**Connect the button module to io5**
+- **Quand le bouton est pressé**, le circuit est fermé, le courant passe par le bouton vers GND, ce qui fait que la broche d’entrée numérique détecte un niveau bas.
+- **Quand le bouton est relâché**, le circuit est ouvert et le niveau de la broche augmente grâce à une résistance de pull-up, ce qui fait que la broche numérique détecte un niveau haut.
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+--------------
+
+**Schéma de câblage :**
+
+**Connectez le module bouton à io5**
+
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj12.png
    :alt: img
 
 --------------
 
-**Test Code**
+**Code de test**
 
--  Initialize the serial port first of all, and set baud rate to 115200.
+- Initialisez d’abord le port série et réglez le débit à 115200.
 
    .. image:: ./scratch_img/st36.png
       :alt: img
 
--  Set pin to IO5 and mode to input. What follows it is a "**forever**"
-   block.
+- Réglez la broche sur IO5 et le mode sur entrée. Ensuite, placez un bloc "**forever**".
 
    .. image:: ./scratch_img/st37.png
       :alt: img
 
--  Read the power level of digital pin 5. If it is 1, print 1. Or else,
-   print 0.
+- Lisez le niveau de la broche numérique 5. Si c’est 1, affichez 1. Sinon, affichez 0.
 
    .. image:: ./scratch_img/st38.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st35.png
    :alt: img
 
-**Test Result**
+**Résultat du test**
 
-Open serial monitor and set the corresponding baud rate.
+Ouvrez le moniteur série et sélectionnez le débit correspondant.
 
-When the button is released, the value is 1; if you press the button, it
-becomes 0.
+Quand le bouton est relâché, la valeur est 1 ; si vous appuyez sur le bouton, elle devient 0.
 
 .. image:: ./scratch_img/st39.png
    :alt: img
 
-In KidsBlock, we can read the state of the digital input pin by
-programming to detect whether the button is pressed. Thus, loads of
-interactive applications can be realized via a button module, such as
-LED on/off and display brightness adjustment.
+Dans KidsBlock, on peut lire l’état de la broche d’entrée numérique par programmation pour détecter si le bouton est pressé. Ainsi, de nombreuses applications interactives peuvent être réalisées avec un module bouton, comme allumer/éteindre une LED ou ajuster la luminosité d’un écran.
 
 --------------
 
-**Expansion: Auto-locking Button**
+**Extension : Bouton à verrouillage automatique**
 
-An auto-locking button won't pop up when you press it without holding,
-and it never pops up unless you press it again. It works like a switch.
-For regular buttons, such function can be realized via MCU and software.
+Un bouton à verrouillage automatique ne revient pas à sa position initiale quand vous appuyez dessus sans maintenir, et il ne remonte que si vous appuyez à nouveau. Il fonctionne comme un interrupteur. Pour les boutons ordinaires, cette fonction peut être réalisée via le MCU et le logiciel.
 
-**Test Code**
+**Code de test**
 
--  Define two variables: **item** as the read button value and
-   **button** as the value shifted by button.
+- Définir deux variables : **item** comme valeur lue du bouton et **button** comme valeur basculée par le bouton.
 
    .. image:: ./scratch_img/st40.png
       :alt: img
 
--  Assign the read button value to **item**.
+- Affectez la valeur lue du bouton à **item**.
 
    .. image:: ./scratch_img/st41.png
       :alt: img
 
--  Determine whether the button is pressed. If it is, shift the value of
-   **button** and print it.
+- Déterminez si le bouton est pressé. Si oui, basculez la valeur de **button** et affichez-la.
 
    .. image:: ./scratch_img/st43.png
       :alt: img
 
-   -  Delay 0.01s to eliminate the button jitter.
+   - Délai de 0.01s pour éliminer le rebond du bouton.
 
-      -  If a close state is detected at the button, a delay will be
-         executed to eliminate **Front Porch Jitter**. Generally, the
-         delay is within 5ms～10ms (Mechanical properties decide). After
-         the jitter disappears, check the button state again. If the
-         closed state level is still maintained, it is confirmed that
-         there is a button pressed.
-      -  When a released button is detected, a delay of 5ms～10ms also
-         should happen to remove the **Back Porch Jitter**, so that the
-         program for the button can be executed.
+      - Si un état fermé est détecté sur le bouton, un délai sera exécuté pour éliminer le rebond avant front. Généralement, ce délai est compris entre 5ms et 10ms (propriétés mécaniques). Après disparition du rebond, vérifiez à nouveau l’état du bouton. Si l’état fermé persiste, il est confirmé que le bouton est pressé.
+      - Lorsqu’un bouton relâché est détecté, un délai de 5ms à 10ms doit également être appliqué pour éliminer le rebond arrière, afin que le programme du bouton puisse être exécuté.
 
--  When the button is pressed, **button** equals 1. Press it again,
-   **button** shifts to 0, alternatively.
+- Quand le bouton est pressé, **button** vaut 1. Appuyez à nouveau, **button** passe à 0, alternativement.
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st4png
    :alt: img
 
-**Test Result**
+**Résultat du test**
 
-Upload code and open the serial monitor.
+Chargez le code et ouvrez le moniteur série.
 
-When you press the button once, 1 will be displayed. If you press button
-for the second time, the value becomes 0. Now, a common button boasts
-the function of an auto-locking one.
+Quand vous appuyez une fois, 1 s’affiche. Si vous appuyez une seconde fois, la valeur devient 0. Ainsi, un bouton ordinaire peut fonctionner comme un bouton à verrouillage automatique.
 
 .. image:: ./scratch_img/st46.png
    :alt: img
 
 --------------
 
-
-
-1.3 Lighting Control
-^^^^^^^^^^^^^^^^^^^^^^
+1.3 Contrôle de l’éclairage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
-In above basic experiments, we remould an auto-locking button to control
-the LED. An auto-locking button is suitable for any situations where a
-certain state needs to be maintained, for example, when LED needs to
-light up for a long time, the ESP32 development board is required for
-some operations.
+Dans les expériences de base ci-dessus, nous avons modifié un bouton à verrouillage automatique pour contrôler la LED. Un bouton à verrouillage automatique est adapté à toutes les situations où un certain état doit être maintenu, par exemple, pour garder une LED allumée longtemps, la carte ESP32 est requise pour certaines opérations.
 
-In this experiment, we will adopt Arduino ESP32 board to guide you to
-implement a lighting system and simulate real-life scenes to control
-light via the button.
+Dans cette expérience, nous utiliserons la carte Arduino ESP32 pour vous guider dans la réalisation d’un système d’éclairage et simuler des scénarios réels pour contrôler la lumière via le bouton.
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the button to io5 and LED to io27**
+**Connectez le bouton à io5 et la LED à io27**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj13.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Code Flow:
+Flux du code :
 
 .. image:: ./scratch_img/flo1.png
    :alt: img
 
-Complete code:
+Code complet :
 
-Based on the code for Auto-locking Button, we add "**LED pin output**"
-blocks.
+Sur la base du code pour le bouton à verrouillage automatique, nous ajoutons des blocs "**Sortie de la broche LED**".
 
 .. image:: ./scratch_img/st47.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-**When you press the button once, LED lights up; if you press again, LED
-turns off. This operation is a loop, which is consistent with the
-lighting principle in reality.**
+**Lorsque vous appuyez une fois sur le bouton, la LED s’allume ; si vous appuyez à nouveau, la LED s’éteint. Cette opération boucle, conformément au principe d’éclairage réel.**
 
 --------------
 
-In this chapter, we have demonstrated how to program and control via
-KidsBlock, and we have learned the basics as well as some software and
-hardware concepts in experiments such as auto-locking button and
-lighting control system.
+Dans ce chapitre, nous avons montré comment programmer et contrôler via KidsBlock, et nous avons appris les bases ainsi que des concepts logiciels et matériels dans des expériences comme le bouton à verrouillage automatique et le système de contrôle de l’éclairage.
 
-These are essential for a good KidsBlock developer. Next, we will guide
-you to keep exploring more applications and skills, whether you are a
-beginner or a veteran. Hope you enjoy the fun and challenges during
-learning KidsBlock. Let's move on!
+Ces notions sont essentielles pour un bon développeur KidsBlock. Ensuite, nous vous guiderons pour explorer davantage d’applications et de compétences, que vous soyez débutant ou expérimenté. Profitez du plaisir et des défis lors de l’apprentissage de KidsBlock. Continuons !
 
 --------------
-
-
 
 1.5 FAQ
-^^^^^^^^^
+^^^^^^^
 
-**Q: LED doesn't light up after uploading code.**
+**Q : La LED ne s’allume pas après l’envoi du code.**
 
-A: Please check whether the pin defined in code is consistent with that
-in your wirings. If they are incompatible, please adjust it referring to
-the code.
+R : Veuillez vérifier si la broche définie dans le code correspond à celle de votre câblage. Si ce n’est pas le cas, ajustez-la en vous référant au code.
 
 --------------
 
-**Q: The button sometimes works while sometimes doesn't.**
+**Q : Le bouton fonctionne parfois, parfois non.**
 
-A: Please modify the delay of jitter elimination to a proper value.
+R : Veuillez modifier la durée du délai pour l’élimination du rebond à une valeur appropriée.
 
 .. code:: c++
 
-    //Eliminate the button jitter
-      delay(10);  //Modify the delay val in this line
+    //Éliminer le rebond du bouton
+      delay(10);  //Modifiez la valeur de délai sur cette ligne
 
+---
 
-
-
+N'hésitez pas à demander si vous souhaitez la traduction d’une autre partie ou des précisions !
