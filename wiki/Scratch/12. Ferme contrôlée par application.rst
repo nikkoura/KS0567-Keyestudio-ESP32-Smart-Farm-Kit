@@ -1,0 +1,226 @@
+12 Project: APP Control Smart Farm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--------------
+
+**Pay attention! Do not overflow water from plastic pools in
+experiments. Spilling water on other sensors may cause a short circuit
+or modules to be out of work. If batteries get wet, even explosion may
+occur. Do be extra careful! For younger users, please operate with your
+parents. To guarantee security, please obey guidances and safety
+regulations.**
+
+--------------
+
+.. image:: ./scratch_img/cou121.png
+   :alt: img
+
+
+
+12.1 Description
+^^^^^^^^^^^^^^^^^^
+
+The APP management system is able to monitor multiple real-time index of
+the farm, such as temperature and humidity, pool water level, soil
+humidity, light intensity and rainfall.
+
+Meanwhile, it also controls LED for lighting, water pump for irrigation,
+feeding box for feeding and fan for adjusting temperature and humidity.
+
+.. image:: ./scratch_img/cou122.png
+   :alt: img
+
+These functions can be realized via an APP on your phone, facilitating
+farm management. For more intelligence, a buzzer also adopted as an
+alarm.
+
+--------------
+
+
+
+12.2 Flow Diagram
+^^^^^^^^^^^^^^^^^^^
+
+.. image:: ./scratch_img/image-20230608150835987.png
+   :alt: image-20230608150835987
+
+--------------
+
+
+
+12.3 Test Code
+^^^^^^^^^^^^^^^^
+
+**Code Flow:**
+
+.. image:: ./scratch_img/flo12.png
+   :alt: img
+
+**Burn Code on ESP32:**
+
+-  Connect ESP32 to WiFi. In the following code, **ssid** and **pwd**
+   are respectively WiFi name and password
+
+.. image:: ./scratch_img/st13png
+   :alt: img
+
+-  LCD displays IP address
+
+   .. image:: ./scratch_img/st135.png
+      :alt: img
+
+-  Initialize wifi server. After initialization, ESP32 and APP can
+   communicate with each other through WIFI.
+
+   .. image:: ./scratch_img/st142.png
+      :alt: img
+
+-  Check whether wifi is connected to client/APP
+
+   .. image:: ./scratch_img/st143.png
+      :alt: img
+
+-  Send real time data of sensors to APP:
+
+   .. image:: ./scratch_img/st14png
+      :alt: img
+
+-  ESP32 receives data from APP and determine them. NOTE: All data are
+   in the format of String.
+
+   .. image:: ./scratch_img/st145.png
+      :alt: img
+
+**Complete Code:**
+
+.. image:: ./scratch_img/st146.png
+   :alt: img
+
+--------------
+
+
+
+12.4 APP
+^^^^^^^^^^
+
+**APP Download:**
+
+.. image:: ./scratch_img/couapp1.png
+   :alt: img
+
+**Android：**
+
+-  Open Google play, and search IOT farm to download.
+
+​ |image27|
+
+-  In provided files, Android apk installing package is included:
+
+   .. image:: ./scratch_img/cou123.png
+      :alt: img
+
+I\ **OS：**
+
+Search **IOT farm** in APP Store and tap to download.
+
+--------------
+
+**APP Interface**
+
+.. image:: ./scratch_img/cou12png
+   :alt: img
+
+--------------
+
+**APP Function Description:**
+
+#. When your phone and ESP32 board connect to the same WIFI, you only
+   need to input IP address at upper-right conner to link them.
+
+.. image:: ./scratch_img/cou126.png
+   :alt: img
+
+2. Displays the temperature value of the farm in real time.
+
+.. image:: ./scratch_img/cou127.png
+   :alt: img
+
+3. Displays the humidity value of the farm in real time.
+
+.. image:: ./scratch_img/cou128.png
+   :alt: img
+
+ Displays the soil humidity value of the farm in real time.
+
+.. image:: ./scratch_img/cou129.png
+   :alt: img
+
+5. Displays the sun brightness value of the farm in real time.
+
+.. image:: ./scratch_img/cou1210.png
+   :alt: img
+
+6. Displays the water level of the farm in real time.
+
+.. image:: ./scratch_img/cou1211.png
+   :alt: img
+
+7. Displays the analog rainfall value of the farm in real time.
+
+.. image:: ./scratch_img/cou1212.png
+   :alt: img
+
+8. Control LED.
+
+.. image:: ./scratch_img/cou1213.png
+   :alt: img
+
+9. Control irrigation via water pump.
+
+.. image:: ./scratch_img/cou121png
+   :alt: img
+
+10. Control the fan to adjust temperature.
+
+.. image:: ./scratch_img/cou1215.png
+   :alt: img
+
+11. Control servo to open or close feeding box.
+
+.. image:: ./scratch_img/cou1216.png
+   :alt: img
+
+12. Control buzzer to play music.
+
+.. image:: ./scratch_img/cou1217.png
+   :alt: img
+
+--------------
+
+
+
+12.5 FAQ
+^^^^^^^^^^
+
+Q: Wifi always fails to be connected.
+
+A: Move ESP32 to the side of the router and reboot the board, and just
+be patient to wait. If it still fails to connected, please check whether
+the WiFi name and password are correct.
+
+--------------
+
+Q: APP fails to connect to ESP32.
+
+A: Please make sure that APP and ESP32 are connected to the same WiFi.
+
+--------------
+
+Q: Fail to pump water?
+
+A: Several pumping operations are required to fill the water pump before
+using it. These initial pumpings do not actually draw the water, but to
+introduce sufficient water into the pump. Only after the pump is full
+can water be carried out. So we are first for filling, not pumping.
+
+--------------

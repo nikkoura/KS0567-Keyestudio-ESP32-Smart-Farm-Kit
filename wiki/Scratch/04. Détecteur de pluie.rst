@@ -1,0 +1,212 @@
+4 Project : Rain Detection System
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**NOTE: Sprinkling water on sensors(except steam sensor) may cause a
+short circuit or modules to be out of work. If batteries get wet, even
+explosion may occur. Do be extra careful! For younger users, please
+operate with your parents. To guarantee security, please obey guidances
+and safety regulations.**
+
+--------------
+
+In this project, we will create a rain detection system by a steam
+sensor. When rain is detected, ESP32 triggers various actions like
+sending message, activating sprinklers and turning on lights. Through
+this system, rainfall amount can be monitored, and water leakage can
+also be detected on roofs or in buildings.
+
+Besides, it is easy to connect the steam sensor to ESP32 board, which
+forms a simple but effective rain detection system.
+
+.. image:: ./scratch_img/coutpng
+   :alt: img
+
+--------------
+
+
+
+1 Flow Diagram
+^^^^^^^^^^^^^^^^^^
+
+.. image:: ./scratch_img/image-20230607180917475.png
+   :alt: image-20230607180917475
+
+--------------
+
+
+
+2 Steam Sensor
+^^^^^^^^^^^^^^^^^^
+
+**Description:**
+
+Steam sensor detects the presence of water, so it is usually used in
+rain detection. If the rain hits the conductive pad on the sensor, it
+will send a signal to the Arduino board.
+
+.. image:: ./scratch_img/cou41.png
+   :alt: img
+
+--------------
+
+**Schematic Diagram:**
+
+.. image:: ./scratch_img/couy41.png
+   :alt: img
+
+**Parameters:**
+
+-  Voltage: 3~5V
+-  Current: 1.5mA
+-  Power: 7.5mW
+
+--------------
+
+**Wiring Diagram:**
+
+**Connect the steam sensor to io35.**
+
+**Attention: Connect yellow to S(Signal), red to V(Power), and black to
+GND. Do not reverse them!**
+
+.. image:: ./scratch_img/couj41.png
+   :alt: img
+
+--------------
+
+**Test Code:**
+
+-  Initialize the serial port.
+
+   .. image:: ./scratch_img/st67.png
+      :alt: img
+
+-  Read the sensor value at pin io35 and print it per second.
+
+   .. image:: ./scratch_img/st68.png
+      :alt: img
+
+Complete code:
+
+.. image:: ./scratch_img/st69.png
+   :alt: img
+
+**Test Result:**
+
+Touch the detection area with a wet finger. The larger the area you
+touched is, the larger the value will be.
+
+You may open the serial monitor to observe the currently detected value
+(range: 0~4095).
+
+.. image:: ./scratch_img/st70.png
+   :alt: img
+
+--------------
+
+
+
+3 Rain Detection System
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description:**
+
+When the steam sensor detects rain, it sends a signal to the board to
+trigger various actions, for instance, the buzzer alarms to remind that
+it is raining. This is especially useful for outdoor gardening and
+farming, enabling users to take necessary precautions to avoid
+over-watering.
+
+Additionally, this system can be used to detect water leakage to prevent
+damage from water intrusion. Overall, the steam sensor is versatile and
+effective in various applications.
+
+--------------
+
+**Wiring Diagram:**
+
+**Connect the steam sensor to io35 and buzzer to io16.**
+
+**Attention: Connect yellow to S(Signal), red to V(Power), and black to
+GND. Do not reverse them!**
+
+.. image:: ./scratch_img/couj42.png
+   :alt: img
+
+--------------
+
+**Test Code:**
+
+Code flow:
+
+.. image:: ./scratch_img/flopng
+   :alt: img
+
+Code:
+
+-  Initialize the serial port, and define a variable **item** as the
+   received sensor value.
+
+   .. image:: ./scratch_img/st71.png
+      :alt: img
+
+-  Receive the sensor value and print it on the serial monitor.
+
+   .. image:: ./scratch_img/st72.png
+      :alt: img
+
+-  The received value detected by the sensor is within 800 ~ 1999:
+
+   .. image:: ./scratch_img/st73.png
+      :alt: img
+
+-  The received value detected by the sensor is within 2000 ~ 2999:
+
+   .. image:: ./scratch_img/st7png
+      :alt: img
+
+-  The received value detected by the sensor is greater than 3000:
+
+   .. image:: ./scratch_img/st75.png
+      :alt: img
+
+-  At the end of code blocks, add a "**No Tone**" to turn off the
+   buzzer.
+
+   .. image:: ./scratch_img/st76.png
+      :alt: img
+
+Complete code:
+
+.. image:: ./scratch_img/st77.png
+   :alt: img
+
+**Test Result:**
+
+The greater the detected value is, the loader the sound emitted by the
+buzzer will be.
+
+--------------
+
+
+
+4 FAQ
+^^^^^^^^^
+
+Q: Is the steam sensor waterproof?
+
+A: The detection area can be exposed to water, but the wire junctions
+are not waterproof. During the experiment, please pay attention to the
+amount of water not to be too much to prevent short circuit.
+
+--------------
+
+Q: Although a long time has elapsed since the sensor detected water, the
+buzzer keeps buzzing.
+
+A: It keeps buzzing because there are still blots of water in the
+detection area. Please just clean it up.
+
+--------------
+
+

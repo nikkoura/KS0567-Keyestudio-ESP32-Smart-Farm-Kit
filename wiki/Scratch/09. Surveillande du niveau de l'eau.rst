@@ -1,0 +1,156 @@
+9 Project: Water Level Monitoring System
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--------------
+
+**Pay attention! Do not overflow water from plastic pools in
+experiments. Spilling water on other sensors may cause not only a short
+circuit to disturb normal operations but also heat generation and even
+explosion. Do be extra careful! Especially for younger users, please
+operate with your parents. To guarantee security, please obey guidances
+and safety regulations.**
+
+--------------
+
+
+
+9.1 Flow Diagram
+^^^^^^^^^^^^^^^^^^
+
+.. image:: ./scratch_img/image-20230607165214387.png
+   :alt: image-20230607165214387
+
+--------------
+
+
+
+9.2 Water Level Sensor
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description:**
+
+The water level sensor is easy to use, portable and cost effective. It
+integrates a series of exposed parallel lines to measure the volume of
+water and droplets. Not only is the sensor smaller and smarter than
+other water detectors, but it also features:
+
+-  Smooth transition between water volume and analog volume;
+-  Strong flexibility. The sensor outputs basic analog values;
+-  Low power consumption and high sensitivity;
+-  Directly connect to microprocessors or circuits, and is suitable for
+   various development boards and controllers, such as Arduino
+   controllers, STC and AVR single-chip microcomputers.
+
+.. image:: ./scratch_img/cou91.png
+   :alt: img
+
+--------------
+
+**Wiring Diagram:**
+
+**Connect the water level sensor to io33.**
+
+**Attention: Connect yellow to S(Signal), red to V(Power), and black to
+GND. Do not reverse them!**
+
+.. image:: ./scratch_img/couj91.png
+   :alt: img
+
+--------------
+
+**Test Code:**
+
+.. image:: ./scratch_img/st115.png
+   :alt: img
+
+**Test Result:**
+
+Open the serial monitor.
+
+Touch the detection area of the sensor with a wet finger and the
+currently detected value will be printed on the monitor (range: 0~4095).
+
+.. image:: ./scratch_img/st116.png
+   :alt: img
+
+--------------
+
+
+
+9.3 Water Level Monitoring System
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The water level monitoring system supervises the change of water level
+to clarify problems in time and take measures to avoid disasters. It is
+widely used in water conservancy projects, urban drainage and
+environmental monitoring.
+
+**Wiring Diagram:**
+
+-  **Connect the water level sensor to io33.**
+-  **Connect the buzzer to io16.**
+-  **Connect the LCD1602 to BUS I2C.**
+
+**Attention: Connect yellow to S(Signal), red to V(Power), and black to
+GND. Do not reverse them!**
+
+.. image:: ./scratch_img/couj92.png
+   :alt: img
+
+--------------
+
+**Test Code:**
+
+Code Flow:
+
+.. image:: ./scratch_img/flo9.png
+   :alt: img
+
+Code:
+
+-  Initialize the LCD and turn on its back light; clear all display and
+   then print water level.
+
+   .. image:: ./scratch_img/st117.png
+      :alt: img
+
+-  Define a variable as the detected water level.
+
+   .. image:: ./scratch_img/st118.png
+      :alt: img
+
+-  Read the sensor value and display it on LCD.
+
+   .. image:: ./scratch_img/st119.png
+      :alt: img
+
+-  Determine the water level value. If it is greater than 2000, the
+   buzer will alarm.
+
+   .. image:: ./scratch_img/st120.png
+      :alt: img
+
+Complete code:
+
+.. image:: ./scratch_img/st121.png
+   :alt: img
+
+**Test Result:**
+
+LCD displays the real-time value of water level. In the experiment, we
+cover the detection area with water to stimulate the water level. When
+the detected value exceeds the threshold, the buzzer starts to alarm.
+
+--------------
+
+
+
+9.4 FAQ
+^^^^^^^^^
+
+Q: Is water level sensor waterproof?
+
+A: With the exception of the detection area, the sensor is not
+waterproof. Spilling water on other area may result in a short circuit.
+
+--------------
