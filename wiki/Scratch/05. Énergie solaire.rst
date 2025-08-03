@@ -46,7 +46,7 @@ La conductivité d’un semi-conducteur se situe entre celle d’un conducteur e
 
 --------------
 
-.. image:: ./scratch_img/cou5png
+.. image:: ./scratch_img/cou54.png
    :alt: img
 
 **Le schéma ci-dessus montre la structure interne du semi-conducteur dans la cellule solaire, qui est divisée en trois couches :**
