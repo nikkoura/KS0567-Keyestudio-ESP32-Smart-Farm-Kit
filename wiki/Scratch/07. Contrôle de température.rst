@@ -1,18 +1,12 @@
-7 Project: Temperature Control System
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```rst
+7 Projet : Système de Contrôle de Température
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this project, we will demonstrate how to use temperature and humidity
-sensor, fan and LCD1602 display to constitute an intelligent temperature
-and humidity control system.
+Dans ce projet, nous allons démontrer comment utiliser un capteur de température et d'humidité, un ventilateur et un écran LCD1602 pour constituer un système intelligent de contrôle de température et d'humidité.
 
-The system measures ambient temperature and humidity and controls fan to
-cool down as needed. When the temperature exceeds the set threshold, the
-fan automatically turns on to reduce the ambient temperature below the
-set value. Meanwhile, the current temperature and humidity values will
-be displayed on LCD1602.
+Le système mesure la température et l'humidité ambiantes et contrôle le ventilateur pour refroidir au besoin. Lorsque la température dépasse le seuil fixé, le ventilateur s'allume automatiquement pour réduire la température ambiante en dessous de la valeur définie. Pendant ce temps, les valeurs actuelles de température et d'humidité seront affichées sur l'écran LCD1602.
 
-Therefore, it realizes automatic adjustment of ambient temperature and
-humidity, which is perfect for projects that require these functions.
+Ainsi, il réalise un ajustement automatique de la température et de l'humidité ambiantes, ce qui est parfait pour les projets nécessitant ces fonctions.
 
 .. image:: ./scratch_img/cout7.png
    :alt: img
@@ -21,108 +15,91 @@ humidity, which is perfect for projects that require these functions.
 
 
 
-7.1 Flow Diagram
-^^^^^^^^^^^^^^^^^^
+7.1 Diagramme de Flux
+^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ./scratch_img/image-2023060712165183png
+.. image:: ./scratch_img/image-20230607121651834.png
    :alt: image-20230607121651834
 
 --------------
 
 
 
-7.2 Temperature and Humidity Sensor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2 Capteur de Température et d'Humidité
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-DHT11 temperature and humidity sensor outputs digital signals. It
-applies principles of analog signal acquisition and conversion as well
-as temperature and humidity sensing technology, so that it features
-long-term stability and high reliability. Besides, the sensor integrates
-a high-precision resistive humidity sensor and a resistive
-thermosensitive temperature sensor, and is connected with an 8-bit
-high-performance MCU.
+Le capteur de température et d'humidité DHT11 émet des signaux numériques. Il applique des principes d'acquisition et de conversion de signaux analogiques ainsi que des technologies de détection de température et d'humidité, ce qui lui confère une stabilité à long terme et une grande fiabilité. De plus, le capteur intègre un capteur d'humidité résistif de haute précision et un capteur de température thermosensible résistif, et est connecté à un MCU haute performance de 8 bits.
 
 .. image:: ./scratch_img/cou71.png
    :alt: img
 
 --------------
 
-**DHT11 Communication Means:**
+**Moyens de Communication DHT11 :**
 
-DHT11 communicates through monobus(a single bus) which exchanges and
-controls data.
+Le DHT11 communique via un monobus (un seul bus) qui échange et contrôle les données.
 
--  Monobus transmits **Data Bit**:
+-  Le monobus transmet **le Bit de Données** :
 
-   -  Data format of monobus: transmit 40bit data every time, and
-      high-bit first.
-   -  8bit humidity integer value + 8bit humidity decimal value + 8bit
-      temperature integer value + 8bit temperature decimal value + 8bit
-      parity.
-   -  **NOTE: Humidity decimal value equals 0.**
+   -  Format de données du monobus : transmettre 40 bits de données à chaque fois, en commençant par le bit de poids fort.
+   -  8 bits de valeur entière d'humidité + 8 bits de valeur décimale d'humidité + 8 bits de valeur entière de température + 8 bits de valeur décimale de température + 8 bits de parité.
+   -  **REMARQUE : La valeur décimale d'humidité est égale à 0.**
 
--  **Paraty Bit**:
+-  **Bit de Parité** :
 
-   -  8bit humidity integer value + 8bit humidity decimal value + 8bit
-      temperature integer value + 8bit temperature decimal value.
-   -  8bit parity equals the end 8 bits of the result.
+   -  8 bits de valeur entière d'humidité + 8 bits de valeur décimale d'humidité + 8 bits de valeur entière de température + 8 bits de valeur décimale de température.
+   -  8 bits de parité égale aux 8 derniers bits du résultat.
 
-**Timing Diagram:**
+**Diagramme de Timing :**
 
 .. image:: ./scratch_img/cou73.png
    :alt: img
 
-\**NOTE: \*\*
+\**REMARQUE : \*\*
 
-**The host always reads the temperature and humidity values of last
-measurement from DHT11. Therefore, If the interval between two
-measurements is long, please consecutively detect twice and adopt the
-second result.**
+**L'hôte lit toujours les valeurs de température et d'humidité de la dernière mesure du DHT11. Par conséquent, si l'intervalle entre deux mesures est long, veuillez détecter consécutivement deux fois et adopter le deuxième résultat.**
 
-For more details, please visit ASAIR official website:
+Pour plus de détails, veuillez visiter le site officiel d'ASAIR :
 http://www.aosong.com/products-21.html
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de Câblage :**
 
-**Connect the temperature and humidity sensor to io17.**
+**Connectez le capteur de température et d'humidité à io17.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj71.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de Test :**
 
--  Initialize the serial port and the sensor.
+-  Initialisez le port série et le capteur.
 
    .. image:: ./scratch_img/st89.png
       :alt: img
 
--  The serial monitor prints and refreshes humidity and temperature
-   values per second.
+-  Le moniteur série imprime et actualise les valeurs d'humidité et de température par seconde.
 
    .. image:: ./scratch_img/st90.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st91.png
    :alt: img
 
-**Test Result:**
+**Résultat du Test :**
 
 .. image:: ./scratch_img/cou71-1.png
    :alt: img
 
-Open the serial monitor, and you will see the current temperature and
-humidity value.
+Ouvrez le moniteur série, et vous verrez la valeur actuelle de température et d'humidité.
 
 .. image:: ./scratch_img/st88.png
    :alt: img
@@ -131,56 +108,43 @@ humidity value.
 
 
 
-7.3 LCD 1602 Module
-^^^^^^^^^^^^^^^^^^^^^
+7.3 Module LCD 1602
+^^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-LCD 1602 possesses a standard 14-pin (without back light) or 16-pin
-(with back light) interface, saving the pins of MCU. Its display drives
-IC to realize I2C control.
+Le LCD 1602 possède une interface standard de 14 broches (sans rétroéclairage) ou 16 broches (avec rétroéclairage), économisant les broches du MCU. Son circuit intégré d'affichage permet de réaliser un contrôle I2C.
 
 .. image:: ./scratch_img/cou72.png
    :alt: img
 
 --------------
 
-**I2C Serial Communication:**
+**Communication Série I2C :**
 
-I2C communication, known fully as Inter-Integrated Circuit (IIC) or
-Two-Wire Interface (TWI), is a commonly-used dual-bus (a host and a
-slave) communication protocol, which is developed by Phillips
-Semiconductor (purchased by US NXP Semiconductors).
+La communication I2C, connue sous le nom complet de Circuit Inter-Intégré (IIC) ou Interface à Deux Fils (TWI), est un protocole de communication à double bus (un hôte et un esclave) couramment utilisé, développé par Phillips Semiconductor (acheté par NXP Semiconductors aux États-Unis).
 
-The biggest advantage is that only two wires complete the transmission
-of data, which largely simplifies circuits. In total, I2C bus can
-connect 127 nodes in parallel, so it supports multiple hosts and slaves.
+Le plus grand avantage est que seulement deux fils suffisent pour réaliser la transmission des données, ce qui simplifie considérablement les circuits. Au total, le bus I2C peut connecter 127 nœuds en parallèle, ce qui prend en charge plusieurs hôtes et esclaves.
 
-Generally, external power supply is needless for slaves, as I2C bus will
-transmit the power to them:
+En général, l'alimentation externe n'est pas nécessaire pour les esclaves, car le bus I2C leur transmettra l'énergie :
 
 .. image:: ./scratch_img/cou75.png
    :alt: img
 
-I2C bus transmits data via 8-bit data transmission. Usually,
-one-byte-data is composed of nine clock signals, eight of which transmit
-data and the last one marks the end of transmission.
+Le bus I2C transmet des données via une transmission de données de 8 bits. En général, une donnée d'un octet est composée de neuf signaux d'horloge, dont huit transmettent des données et le dernier marque la fin de la transmission.
 
-Moreover, I2C bus supports multi-byte data transmission by repeating the
-above process continuously.
+De plus, le bus I2C prend en charge la transmission de données multi-octets en répétant continuellement le processus ci-dessus.
 
-I2C Protocol basically consists of:
+Le protocole I2C se compose essentiellement de :
 
--  **Starting signal**: Before transmission, sender transmits a starting
-   signal to inform receiver of starting point.
--  **Address**: It notifies receiver to whom the data is being sent.
--  **Data**: It is transmitted one byte each time and bit by bit.
--  **Ending Signal**: When finishing transmission, sender ends data with
-   an ending signal to inform receiver that process is over.
+-  **Signal de Démarrage** : Avant la transmission, l'expéditeur transmet un signal de démarrage pour informer le récepteur du point de départ.
+-  **Adresse** : Cela notifie le récepteur à qui les données sont envoyées.
+-  **Données** : Elles sont transmises un octet à la fois et bit par bit.
+-  **Signal de Fin** : Lorsqu'il termine la transmission, l'expéditeur termine les données par un signal de fin pour informer le récepteur que le processus est terminé.
 
-**Timing Diagram of Serial Protocol:**
+**Diagramme de Timing du Protocole Série :**
 
-For more details, please visit the official website:
+Pour plus de détails, veuillez visiter le site officiel :
 https://www.nxp.com/
 
 .. image:: ./scratch_img/cou76.png
@@ -189,57 +153,50 @@ https://www.nxp.com/
 .. image:: ./scratch_img/cou77.png
    :alt: img
 
-We provide you with a library file **Wire.h** on Arduino for I2C
-protocol, in which functions can be directly called to communicate with
-I2C/TWI devices.
+Nous vous fournissons un fichier de bibliothèque **Wire.h** sur Arduino pour le protocole I2C, dans lequel les fonctions peuvent être directement appelées pour communiquer avec les dispositifs I2C/TWI.
 
-For details of library, please refer to:
+Pour les détails de la bibliothèque, veuillez vous référer à :
 
 https://www.arduino.cc/reference/en/language/functions/communication/wire/
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de Câblage :**
 
-**Connect the LCD to I2C BUS as shown below.**
+**Connectez le LCD au BUS I2C comme montré ci-dessous.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj72.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de Test :**
 
--  Initialize I2C address of LCD and turn on its back light.
+-  Initialisez l'adresse I2C du LCD et activez son rétroéclairage.
 
    .. image:: ./scratch_img/st92.png
       :alt: img
 
--  Set the LCD cursor position in X and Y axis (X-axis displays a
-   maximum of 16 characters, and Y-axis displays a maximum of 2
-   columns).
+-  Définissez la position du curseur du LCD sur les axes X et Y (l'axe X affiche un maximum de 16 caractères, et l'axe Y affiche un maximum de 2 colonnes).
 
    .. image:: ./scratch_img/st93.png
       :alt: img
 
--  Input the print content (No more than 16 characters, otherwise it
-   will not be complete).
+-  Saisissez le contenu à imprimer (Pas plus de 16 caractères, sinon cela ne sera pas complet).
 
-   .. image:: ./scratch_img/st9png
+   .. image:: ./scratch_img/st94.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st95.png
    :alt: img
 
-**Test Result:**
+**Résultat du Test :**
 
-LCD1602 opens its back light and displays ”\ **HELLO WORLD 0**\ “ and
-”\ **HELLO WORLD 1**\ “.
+Le LCD1602 allume son rétroéclairage et affiche ”\ **HELLO WORLD 0**\ “ et ”\ **HELLO WORLD 1**\ “.
 
 .. image:: ./scratch_img/cou78.png
    :alt: img
@@ -248,170 +205,145 @@ LCD1602 opens its back light and displays ”\ **HELLO WORLD 0**\ “ and
 
 
 
-7.4 Fan Module
-^^^^^^^^^^^^^^^^
+7.4 Module Ventilateur
+^^^^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-130 Motor is able to adjust speed via PWM. In the process, two pins are
-needed to be connected for controlling.
+Le moteur 130 peut ajuster la vitesse via PWM. Dans le processus, deux broches doivent être connectées pour le contrôle.
 
-The module is suitable for multiple applications, such as computer heat
-dissipation and industrial production. What's more it is compact and
-easy to install, which is very practical.
+Le module est adapté à de multiples applications, telles que la dissipation de chaleur des ordinateurs et la production industrielle. De plus, il est compact et facile à installer, ce qui est très pratique.
 
 .. image:: ./scratch_img/cou710.png
    :alt: img
 
 --------------
 
-**Schematic Diagram:**
+**Diagramme Schématique :**
 
 .. image:: ./scratch_img/cou712.png
    :alt: img
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de Câblage :**
 
-**Connect the motor to io18 and io19.**
+**Connectez le moteur à io18 et io19.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj73.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de Test :**
 
--  Set fan pin **INA**
+-  Définissez la broche du ventilateur **INA**
 
    .. image:: ./scratch_img/st96.png
       :alt: img
 
--  Set the power level state of **INA**, which determines the rotation
-   direction of fan.
+-  Définissez l'état du niveau de puissance de **INA**, qui détermine la direction de rotation du ventilateur.
 
    .. image:: ./scratch_img/st97.png
       :alt: img
 
--  Set fan pin **INB**.
+-  Définissez la broche du ventilateur **INB**.
 
    .. image:: ./scratch_img/st98.png
       :alt: img
 
--  Set the analog output at **INB**, which decides the rotation speed.
+-  Définissez la sortie analogique à **INB**, qui détermine la vitesse de rotation.
 
-   -  When INA is at high, the lower the analog output at INB is, the
-      faster the fan will rotate.
+   -  Lorsque INA est à haut, plus la sortie analogique à INB est basse, plus le ventilateur tournera vite.
 
-   -  When INA is at low, the greater the analog output at INB is, the
-      faster the fan will rotate.
+   -  Lorsque INA est à bas, plus la sortie analogique à INB est élevée, plus le ventilateur tournera vite.
 
       .. image:: ./scratch_img/st99.png
          :alt: img
 
-**Test Result:**
+**Résultat du Test :**
 
-130 motor alternatively rotates left and right every 2 seconds.
+Le moteur 130 tourne alternativement à gauche et à droite toutes les 2 secondes.
 
 .. image:: ./scratch_img/cou79.png
    :alt: img
 
-\**NOTE: \*\*
+\**REMARQUE : \*\*
 
-**Intermittent stops exist during changing directions of rotation. They
-prevent an excessive current at the moment of reversal. Otherwise, a
-forced reset may occur due to insufficient power supply on the
-development board.**
+**Des arrêts intermittents existent lors du changement de direction de rotation. Ils empêchent un courant excessif au moment du renversement. Sinon, un réinitialisation forcée peut se produire en raison d'une alimentation insuffisante sur la carte de développement.**
 
 --------------
 
 
 
-7.5 Temperature Control System
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.5 Système de Contrôle de Température
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-Herein, we read the value of the DHT11 temperature and humidity sensor
-through monobus communication, and the values will be displayed on the
-LCD. If values exceed the set threshold, the fan will turn on for
-dehumidification and cooling to protect the animals and plants in the
-farm. Remarkably, this system is easy to install with multiple
-functions, such as speed controlling via PWM and data transmission by
-monobus.
+Ici, nous lisons la valeur du capteur de température et d'humidité DHT11 via la communication monobus, et les valeurs seront affichées sur le LCD. Si les valeurs dépassent le seuil fixé, le ventilateur s'allumera pour déshumidifier et refroidir afin de protéger les animaux et les plantes de la ferme. Remarquablement, ce système est facile à installer avec de multiples fonctions, telles que le contrôle de la vitesse via PWM et la transmission de données par monobus.
 
-Overall, it is a practical system that helps farmers monitor and control
-the real-time status to improve production efficiency.
+Dans l'ensemble, c'est un système pratique qui aide les agriculteurs à surveiller et contrôler l'état en temps réel pour améliorer l'efficacité de la production.
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de Câblage :**
 
--  **Connect the temperature and humidity sensor to io17.**
--  **Connect motor(fan) modue to io18 and io19**
--  **Connect LCD1602 to BUS I2C.**
+-  **Connectez le capteur de température et d'humidité à io17.**
+-  **Connectez le module moteur (ventilateur) à io18 et io19.**
+-  **Connectez le LCD1602 au BUS I2C.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
-.. image:: ./scratch_img/couj7png
+.. image:: ./scratch_img/couj74.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de Test :**
 
-Code Flow:
+Flux de Code :
 
 .. image:: ./scratch_img/flo7.png
    :alt: img
 
-Code:
+Code :
 
--  Initialize LCD to set an address, and clear the display. Turn on its
-   backlight and set cursor position:
+-  Initialisez le LCD pour définir une adresse, et effacez l'affichage. Activez son rétroéclairage et définissez la position du curseur :
 
    .. image:: ./scratch_img/st100.png
       :alt: img
 
--  Initialize the DHT11 sensor and choose a corresponding pin. Define
-   two variables as temperature and humidity values.
+-  Initialisez le capteur DHT11 et choisissez une broche correspondante. Définissez deux variables comme valeurs de température et d'humidité.
 
    .. image:: ./scratch_img/st101.png
       :alt: img
 
--  In the loop, respectively assign the detected values to the two
-   variables.
+-  Dans la boucle, assignez respectivement les valeurs détectées aux deux variables.
 
    .. image:: ./scratch_img/st102.png
       :alt: img
 
--  Display the values on LCD.
+-  Affichez les valeurs sur le LCD.
 
    .. image:: ./scratch_img/st103.png
       :alt: img
 
--  Determine the temperature and humidity value. if temperature is
-   higher than 29° or humidity exceeds 80, fan will rotate.
+-  Déterminez la valeur de température et d'humidité. Si la température est supérieure à 29° ou si l'humidité dépasse 80, le ventilateur tournera.
 
-   .. image:: ./scratch_img/st10png
+   .. image:: ./scratch_img/st104.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st105.png
    :alt: img
 
-**Test Result:**
+**Résultat du Test :**
 
-When the temperature reaches 29°C, the fan will turn on to dissipate
-heat. When it is lower than 29°C, the fan will turn off (the fan just
-simulates heat dissipation, so the effect is not good), which saves
-energy for the farm.
+Lorsque la température atteint 29°C, le ventilateur s'allume pour dissiper la chaleur. Lorsqu'elle est inférieure à 29°C, le ventilateur s'éteint (le ventilateur simule simplement la dissipation de chaleur, donc l'effet n'est pas bon), ce qui permet d'économiser de l'énergie pour la ferme.
 
 --------------
 
@@ -420,20 +352,16 @@ energy for the farm.
 7.6 FAQ
 ^^^^^^^^^
 
-#Q: Is temperature and humidty sensor waterproof?
+#Q : Le capteur de température et d'humidité est-il étanche ?
 
-A: No. It detects the ambient temperature and humidity (in the air), so
-please do not put it in water.
-
---------------
-
-#Q: ESP32 board is reset when fan rotates.
-
-A: When fan rotates, more current is required than other sensors, hence
-voltage and current may fluctuate in the circuit. Especially at the
-moment of fan reversal, fluctuations may be too heavy, resulting in a
-reset due to extremely low voltage and current in ESP32 development
-board.
+R : Non. Il détecte la température et l'humidité ambiantes (dans l'air), donc ne le mettez pas dans l'eau.
 
 --------------
+
+#Q : La carte ESP32 se réinitialise lorsque le ventilateur tourne.
+
+R : Lorsque le ventilateur tourne, plus de courant est requis que pour d'autres capteurs, donc la tension et le courant peuvent fluctuer dans le circuit. Surtout au moment du renversement du ventilateur, les fluctuations peuvent être trop importantes, entraînant une réinitialisation en raison d'une tension et d'un courant extrêmement bas sur la carte de développement ESP32.
+
+--------------
+```
 
