@@ -1,334 +1,272 @@
-3 Project : Alarm System
+3 Projet : Système d'alarme
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this project, we use a PIR motion sensor and a buzzer to consist an
-alarm system, which can be controlled by ESP32 development board.
+Dans ce projet, nous utilisons un capteur de mouvement PIR et un buzzer pour constituer un système d'alarme, qui peut être contrôlé par une carte de développement ESP32.
 
-How does it work? The electric signals are detected and read by the PIR
-motion sensor through programming on Arduino IDE, and then it determines
-whether there is a person. If there is, the buzzer alarms. In this way,
-this alarm system costs much lower for families and offices.
+Comment cela fonctionne-t-il ? Les signaux électriques sont détectés et lus par le capteur de mouvement PIR via une programmation sur l'IDE Arduino, puis il détermine s'il y a une personne. Si c'est le cas, le buzzer sonne. Ainsi, ce système d'alarme coûte beaucoup moins cher pour les familles et les bureaux.
 
 --------------
 
-
-
-3.1 Flow Diagram
-^^^^^^^^^^^^^^^^^^
+3.1 Diagramme de flux
+^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ./scratch_img/image-20230606102303743.png
    :alt: image-20230606102303743
 
 --------------
 
+3.2 Capteur de mouvement PIR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Description :**
 
-3.2 PIR Motion Sensor
-^^^^^^^^^^^^^^^^^^^^^^^
+Un capteur de mouvement PIR détecte la présence d'une personne en détectant la chaleur émise par le corps humain.
 
-**Description:**
-
-A PIR motion sensor detects the presence of a person by sensing the heat
-given off by the human body.
-
-Moreover, this sensor is small and easy to use.
+De plus, ce capteur est petit et facile à utiliser.
 
 .. image:: ./scratch_img/cou32.png
    :alt: img
 
 --------------
 
-**Schematic Diagram:**
+**Schéma :**
 
 .. image:: ./scratch_img/couy31.png
    :alt: img
 
-**Parameters:**
+**Paramètres :**
 
--  Voltage: 3~5V
--  Current: 3.6mA
--  Power: 18mW
--  Angle of View: Y = 90°, X = 110° (theoretical value)
--  Detection Distance: ≤5m
+- Tension : 3~5V
+- Courant : 3,6mA
+- Puissance : 18mW
+- Angle de vue : Y = 90°, X = 110° (valeur théorique)
+- Distance de détection : ≤5m
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the PIR motion sensor to io23.**
+**Connectez le capteur de mouvement PIR à io23.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S(Signal), le fil rouge à V(Alimentation), et le fil noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj31.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Read the value at pin IO23 to determine whether there is a human motion.
+Lisez la valeur sur la broche IO23 pour déterminer s'il y a un mouvement humain.
 
 .. image:: ./scratch_img/image-20250423083305405.png
    :alt: image-20250423083305405
 
-**Test Result:**
+**Résultat du test :**
 
-Open the serial monotor.
+Ouvrez le moniteur série.
 
-When someone is in the area, **Someone** is displayed on the monitor,
-and the red LED on the sensor goes off. However, if there is no one,
-**No one** will be printed and the LED will always be on.
+Lorsqu'une personne se trouve dans la zone, **Quelqu'un** s'affiche sur le moniteur, et la LED rouge du capteur s'éteint. Cependant, s'il n'y a personne, **Personne** sera affiché et la LED restera toujours allumée.
 
-**ATTENTION**: PIR motion sensor is not able to penetrate things, so
-please do not cover the sensor while detecting motions.
+**ATTENTION** : Le capteur de mouvement PIR ne peut pas pénétrer les objets, donc ne couvrez pas le capteur lors de la détection de mouvements.
 
 .. image:: ./scratch_img/st57.png
    :alt: img
 
 --------------
 
-
-
 3.3 Buzzer
-^^^^^^^^^^^^
+^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-A buzzer is an electronic sounder, which emits sounds with different
-frequencies and durations and is powered by DC voltage. Thus, it can be
-used as a reminder or an alarm in considerable electronic devices, such
-as computers, printers, copiers, alarms, electronic toys, automotive
-electronics, telephones and timers.
+Un buzzer est un avertisseur électronique, qui émet des sons de différentes fréquences et durées et est alimenté par une tension continue. Il peut donc être utilisé comme rappel ou alarme dans de nombreux appareils électroniques, tels que les ordinateurs, imprimantes, copieurs, alarmes, jouets électroniques, électronique automobile, téléphones et minuteries.
 
 .. image:: ./scratch_img/cou3png
    :alt: img
 
 --------------
 
-A buzzer consists of **vibration device** and **resonance device**. And
-there are two categories: Passive buzzers and active buzzers.
+Un buzzer se compose d'un **dispositif de vibration** et d'un **dispositif de résonance**. Il existe deux catégories : buzzers passifs et buzzers actifs.
 
--  A **Passive Buzzer** cannot ``vibrate`` to emit sound itself, unless
-   putting a ``square wave`` signal with a certain frequency. Moreover,
-   the emitting sound varies due to the different frequency of square
-   wave, so a passive buzzer can simulate tunes.
+- Un **buzzer passif** ne peut pas « vibrer » pour émettre un son par lui-même, sauf si on lui applique un signal en « onde carrée » d'une certaine fréquence. De plus, le son émis varie selon la fréquence de l'onde carrée, donc un buzzer passif peut simuler des mélodies.
 
-   -  An analog squire wave can be generated by changing the power level
-      at pins. For example, after the high level lasting for 500ms, it
-      shifts to a low level for another 500ms then to a high level
-      again...
-   -  \**We drive the buzzer via a squire wave within 200~5000Hz, and we
-      can compute the frequency(f): *f=1/T*; T is the period (the total
-      time of high and low level). \*\*
+   - Une onde carrée analogique peut être générée en changeant le niveau d'alimentation aux broches. Par exemple, après un niveau haut de 500ms, il passe à un niveau bas pour 500ms, puis à nouveau à un niveau haut...
+   - *Nous pilotons le buzzer via une onde carrée entre 200~5000Hz, et nous pouvons calculer la fréquence (f) : f=1/T ; T est la période (temps total de niveau haut et bas).*  
 
 .. image:: ./scratch_img/cou35.png
    :alt: img
 
--  An **Active Buzzer** is able to emit sound automatically without an
-   external motivator, because it includes a driving circuit which only
-   needs ``DC power supply``. However, its sound is flat with relatively
-   fixed frequency.
+- Un **buzzer actif** peut émettre un son automatiquement sans stimulateur externe, car il comporte un circuit de pilotage qui nécessite seulement une alimentation en tension continue. Toutefois, son son est monotone avec une fréquence relativement fixe.
 
 --------------
 
-**In this experiment, a passive buzzer is applied to" play music".**
+**Dans cette expérience, un buzzer passif est utilisé pour « jouer de la musique ».**
 
 --------------
 
-**Schematic Diagram:**
+**Schéma :**
 
 .. image:: ./scratch_img/cou38.png
    :alt: img
 
-**Parameters:**
+**Paramètres :**
 
--  Voltage: 3~5V
--  Current: ≤5mA
--  Power: ≤25mW
+- Tension : 3~5V
+- Courant : ≤5mA
+- Puissance : ≤25mW
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the buzzer to io16.**
+**Connectez le buzzer à io16.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S(Signal), le fil rouge à V(Alimentation), et le fil noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj32.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-**Method 1: Analog Squire Wave**
+**Méthode 1 : Onde carrée analogique**
 
-A passive buzzer is driven by squire waves, so we stimulate the wave.
+Un buzzer passif est piloté par des ondes carrées, donc nous simulons l’onde.
 
-An analog squire wave can be generated by changing the power level of
-pin: high level for 500us and low level for 500us. So, the buzzer will
-emit sound. Also, the durations can adjust the sound volume.
+Une onde carrée analogique peut être générée en changeant le niveau d’alimentation de la broche : niveau haut pendant 500us et niveau bas pendant 500us. Ainsi, le buzzer émettra un son. De plus, la durée peut ajuster le volume sonore.
 
-Please try 1000us, 1500us, 3000us…What's the difference?
+Essayez 1000us, 1500us, 3000us... Quelle est la différence ?
 
 .. image:: ./scratch_img/cou36.png
    :alt: img
 
-Code:
+Code :
 
 .. image:: ./scratch_img/st58.png
    :alt: img
 
--  In delay function, the time unit us micro-seconds. So the following
-   block represents a 500ms delay.
+- Dans la fonction de délai, l’unité de temps est la microseconde. Donc, le bloc suivant représente un délai de 500ms.
 
 .. image:: ./scratch_img/st59.png
    :alt: img
 
-According to formula:
+Selon la formule :
 
 .. math:: f = 1/T
 
-Thus, 500us is the duration, and we can calculate the frequency = 2kHz,
-i.e., the high and low level alter 2000 times per second.
+Ainsi, 500us est la durée, et nous pouvons calculer la fréquence = 2kHz, c’est-à-dire que le niveau haut et bas alterne 2000 fois par seconde.
 
 --------------
 
-**Method 2: Speaker Blocks**
+**Méthode 2 : Blocs haut-parleur**
 
-We adopt Speaker\ |image24| code blocks to drive the buzzer to vibrate.
+Nous utilisons des blocs de code Speaker|image24| pour piloter le buzzer afin qu’il vibre.
 
-**Speaker Blocks generates PWM signal with a certain frequency to drive
-the buzzer to vibrate,** and the duration and tone is controlled by
-related parameters.
+**Les blocs Speaker génèrent un signal PWM d'une certaine fréquence pour piloter le buzzer,** et la durée et le ton sont contrôlés par les paramètres associés.
 
-There are two ways to define the duration. One is to adjust the
-parameters of the tone() function to set a duration, and the other is to
-adopt a noTone() function to directly stop the sound. If you do not
-define a duration in tone(), the sound signal will always be generated
-unless a noTone() stops it.
+Il existe deux façons de définir la durée. L'une consiste à ajuster les paramètres de la fonction tone() pour définir une durée, et l'autre consiste à utiliser la fonction noTone() pour arrêter directement le son. Si vous ne définissez pas de durée dans tone(), le signal sonore sera toujours généré sauf si un noTone() l’arrête.
 
-For ESP32 board, one sound can only be produced at a time. If one pin of
-ESP32 is generating a sound signal via tone(), it is not acceptable to
-emit sound by this function on another pin.
+Pour la carte ESP32, un seul son peut être produit à la fois. Si une broche de l’ESP32 génère un signal sonore via tone(), il n’est pas possible d’émettre un son par cette fonction sur une autre broche.
 
-**Tone Table**
+**Table des tons**
 
 .. image:: ./scratch_img/cou37.png
    :alt: img
 
-Code:
+Code :
 
--  Drag a "**Tone**" block from |image25| as shown below, and set pin to
-   IO16.
+- Faites glisser un bloc « Tone » depuis |image25| comme indiqué ci-dessous, et réglez la broche sur IO16.
 
    .. image:: ./scratch_img/st61.png
       :alt: img
 
--  You may select a frequency at will.
+- Vous pouvez sélectionner une fréquence au choix.
 
    .. image:: ./scratch_img/st62.png
       :alt: img
 
--  No Tone: It is used to turn off all tones.
+- No Tone : il est utilisé pour désactiver tous les tons.
 
    .. image:: ./scratch_img/st65.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st63.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-Method 1: Buzzer keeps emitting sound.
+Méthode 1 : Le buzzer émet un son en continu.
 
-Method 2: Buzzer alarms via tone() function.
+Méthode 2 : Le buzzer sonne via la fonction tone().
 
 --------------
 
-**Expansion: Play Music**
+**Extension : Jouer de la musique**
 
-Play music through tone().
+Jouez de la musique via tone().
 
-Complete Code:
+Code complet :
 
 .. image:: ./scratch_img/st6png
    :alt: img
 
 --------------
 
+3.4 Système d'alarme
+^^^^^^^^^^^^^^^^^^^^
 
-
-3.4 Alarm System
-^^^^^^^^^^^^^^^^^^
-
-In this experiment, we will construct an alarm system by a PIR motion
-sensor, a buzzer and an LED. When the sensor detects a motion, buzzer
-emits sound and LED blinks to remind of an invasion.
+Dans cette expérience, nous construirons un système d’alarme avec un capteur de mouvement PIR, un buzzer et une LED. Lorsque le capteur détecte un mouvement, le buzzer émet un son et la LED clignote pour signaler une intrusion.
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the PIR motionsensor to io23, buzzer to io16, and LED to
-io27.**
+**Connectez le capteur de mouvement PIR à io23, le buzzer à io16 et la LED à io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S(Signal), le fil rouge à V(Alimentation), et le fil noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj33.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Code flow:
+Flux du code :
 
 .. image:: ./scratch_img/flo3.png
    :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/image-20250423084431295.png
    :alt: image-20250423084431295
 
-**Test Result:**
+**Résultat du test :**
 
-Upload the code and the alarm system starts to work. When it detects a
-motion, buzzer alarms and LED blinks.
+Téléversez le code et le système d’alarme démarre. Lorsqu’il détecte un mouvement, le buzzer sonne et la LED clignote.
 
 --------------
-
-
 
 3.5 FAQ
-^^^^^^^^^
+^^^^^^^
 
-**Q: Tones of buzzer is not accurate with actual ones.**
+**Q : Les tons du buzzer ne sont pas précis par rapport aux vrais.**
 
-A: This regular buzzer just stimulates tones, so it is not able to meet
-professional requirements. If you want standard tones, a more
-specialized speaker is required.
+R : Ce buzzer régulier ne fait que simuler des tons, il ne peut donc pas répondre à des exigences professionnelles. Si vous souhaitez des tons standards, un haut-parleur plus spécialisé est nécessaire.
 
 --------------
 
-**Q: The PIR motion sensor misinforms results.**
+**Q : Le capteur de mouvement PIR donne de mauvais résultats.**
 
-A: This PIR motion sensor is also not a professional one.
+R : Ce capteur de mouvement PIR n’est pas non plus professionnel.
 
-Please guarantee the following situations to avoid a misinformation:
+Veuillez garantir les conditions suivantes pour éviter les mauvaises interprétations :
 
--  Avoid objects blown by wind to flutter within the detection area,
-   such as curtains, clothing and flowers.
--  Avoid strong light in the detection area, such as sunlight, car
-   lights, spotlights and other light sources.
--  And so on...
-
---------------
-
-
+- Évitez les objets soufflés par le vent qui flottent dans la zone de détection, comme les rideaux, vêtements et fleurs.
+- Évitez les lumières fortes dans la zone de détection, telles que la lumière du soleil, les phares de voiture, projecteurs et autres sources de lumière.
+- Etc...
