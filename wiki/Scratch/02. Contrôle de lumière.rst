@@ -1,27 +1,16 @@
-2 Project : Light Control System
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this project, we will construct a light control system by a
-photoresistor and an LED. It is an intelligent system to adjust light,
-which saves energy and enhance efficiency as well.
+Dans ce projet, nous allons construire un système de contrôle de la lumière à l'aide d'une photorésistance et d'une LED. Il s'agit d'un système intelligent pour ajuster la lumière, permettant d'économiser de l'énergie et d'améliorer l'efficacité.
 
 .. image:: ./scratch_img/cout2.png
    :alt: img
 
-This system is compatible with multiple conditions. Thanks to its
-photoresistor, it is able to detect the light intensity in day or at
-night, realizing a more intelligent and energy-saving system.
+Ce système est compatible avec de multiples conditions. Grâce à sa photorésistance, il est capable de détecter l'intensité lumineuse de jour ou de nuit, réalisant ainsi un système plus intelligent et économe en énergie.
 
-When the photoresistor detects that ambient brightness is lower than the
-set value, LED lights up. On the contrary, if the ambient light
-intensity is higher than the set value, photorisistor will send a
-different signal to turn off the LED.
+Lorsque la photorésistance détecte que la luminosité ambiante est inférieure à la valeur définie, la LED s’allume. À l'inverse, si l'intensité lumineuse ambiante est supérieure à la valeur définie, la photorésistance enverra un signal différent pour éteindre la LED.
 
 --------------
 
-
-
-2.1 Flow Diagram
+2.1 Diagramme de flux
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: ./scratch_img/image-20230607175802112.png
@@ -29,182 +18,148 @@ different signal to turn off the LED.
 
 --------------
 
-
-
-2.2 Photoresistor
+2.2 Photorésistance
 ^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-A photoresistor, also called photosensor, converts light signal into
-electric signal (voltage, current, and resistor).
+Une photorésistance, aussi appelée capteur de lumière, convertit le signal lumineux en signal électrique (tension, courant et résistance).
 
-**Working principle:**
+**Principe de fonctionnement :**
 
-We place a photoresistor in a circuit in series connection and add
-suitable voltage to both poles. When there is no light, the resistance
-is infinite and the circuit almost opens. However, when there is light,
-the resistance decreases while the current increases, and it is
-equivalent to a short circuit when the light intensity is sufficient.
+Nous plaçons une photorésistance dans un circuit en connexion série et appliquons une tension appropriée aux deux pôles. Lorsqu'il n'y a pas de lumière, la résistance est infinie et le circuit est quasiment ouvert. Cependant, lorsqu'il y a de la lumière, la résistance diminue tandis que le courant augmente, et cela équivaut à un court-circuit lorsque l'intensité lumineuse est suffisante.
 
-Now we will read the value of photoresistor by programming on ESP32
-development board.
+Nous allons maintenant lire la valeur de la photorésistance par programmation sur une carte de développement ESP32.
 
 .. image:: ./scratch_img/cou2.png
    :alt: img
 
 --------------
 
-**Schematic Diagram:**
+**Schéma électrique :**
 
-When light hits the photoresistor, the stronger the light is, the
-smaller the resistance will be, so the greater the VCC voltage will pass
-through the resistor.
+Lorsque la lumière atteint la photorésistance, plus la lumière est forte, plus la résistance est faible, donc plus la tension VCC traversera la résistance.
 
 .. image:: ./scratch_img/couy21.png
    :alt: img
 
-**Parameters:**
+**Paramètres :**
 
--  Voltage: 3~5V
-
--  Current: 0.2mA
-
--  Power: 1mW
-
--  Spectrum Peak Value: 540nm
-
--  Bright Resistance (10lux): 5~10KR
-
--  Dark Resistance: 0.5MR
+-  Tension : 3~5V
+-  Courant : 0,2mA
+-  Puissance : 1mW
+-  Valeur du pic de spectre : 540nm
+-  Résistance à la lumière (10lux) : 5~10kΩ
+-  Résistance à l'obscurité : 0,5MΩ
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the photoresistor to io3**
+**Connectez la photorésistance à io3**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj21.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
--  Initialize the serial port.
+-  Initialisez le port série.
 
    .. image:: ./scratch_img/st48.png
       :alt: img
 
--  Define a global variable "**item**" as the photoresistor value.
+-  Définissez une variable globale "**item**" comme la valeur de la photorésistance.
 
    .. image:: ./scratch_img/st49.png
       :alt: img
 
--  Set "**item**" to the read value and print it on serial monitor.
+-  Affectez à "**item**" la valeur lue et affichez-la sur le moniteur série.
 
    .. image:: ./scratch_img/st50.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st51.png
    :alt: img
 
 --------------
 
-**Test Result:**
+**Résultat du test :**
 
-Open the serial monitor.
+Ouvrez le moniteur série.
 
-The brighter the light detected by the photoresistor is, the greater the
-value will be.
+Plus la lumière détectée par la photorésistance est intense, plus la valeur sera élevée.
 
 .. image:: ./scratch_img/st52.png
    :alt: img
 
 --------------
 
-
-
-2.3 Light Control System
+2.3 Système de contrôle de la lumière
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the photoresistor to io34 and LED to io27.**
+**Connectez la photorésistance à io34 et la LED à io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj22.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Code Flow:
+Flux du code :
 
 .. image:: ./scratch_img/flo2.png
    :alt: img
 
--  Determine:
-
-   -  The value of the photoresistor >= 800, LED turns off.
-   -  The value of the photoresistor =< 800, LED turns on.
+-  Déterminer :
+   -  Si la valeur de la photorésistance >= 800, la LED s'éteint.
+   -  Si la valeur de la photorésistance =< 800, la LED s’allume.
 
    .. image:: ./scratch_img/st53.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st5png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-When the value of the photoresistor is greater than 800 (in daytime),
-LED goes off. However, if the value is less than 800, LED will
-automatically light on.
+Lorsque la valeur de la photorésistance est supérieure à 800 (en journée), la LED s’éteint. Cependant, si la valeur est inférieure à 800, la LED s’allume automatiquement.
 
 .. image:: ./scratch_img/st55.png
    :alt: img
 
 --------------
 
-\**Various conditions can adopt this type of system. Thanks to its
-photoresistor, it is able to detect the light intensity in day or at
-night, which saves energy and intellectualize the whole system. \*\*
+**Diverses conditions peuvent adopter ce type de système. Grâce à sa photorésistance, il est capable de détecter l’intensité lumineuse de jour ou de nuit, ce qui permet d’économiser de l’énergie et d’intellectualiser tout le système.**
 
 --------------
-
-
 
 2.2 FAQ
-^^^^^^^^^
+^^^^^^^^^^
 
-**Q: The value of the photoresistor cannot be 0.**
+**Q : La valeur de la photorésistance ne peut pas être 0.**
 
-A: In actual life, little light exists although you turn off all lights
-in your room, so the value of photoresistor only approaches to 0 rather
-than equals to 0.
+R : En réalité, il existe toujours un peu de lumière même si vous éteignez toutes les lumières de votre pièce, donc la valeur de la photorésistance ne fait qu’approcher 0 sans jamais l’atteindre.
 
 --------------
 
-**Q: After uploading code, LED doesn't light up even though the room is
-dark without lights.**
+**Q : Après avoir téléchargé le code, la LED ne s’allume pas même si la pièce est sombre sans lumière.**
 
-A: Increase the determined value of photoresistor. In our example, we
-set to 800. So you may adjust it to 1000 or a greater value.
+R : Augmentez la valeur déterminée de la photorésistance. Dans notre exemple, nous avons défini 800. Vous pouvez donc l’ajuster à 1000 ou une valeur supérieure.
 
 .. image:: ./scratch_img/st53.png
    :alt: img
 
 --------------
-
-
-
