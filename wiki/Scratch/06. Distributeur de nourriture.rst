@@ -36,7 +36,7 @@ Commonly, Servo performs precise position control and outputs high
 torque, which most often appears in robotics projects, RC cars,
 airplanes and aircraft.
 
-.. image:: ./scratch_img/cou6png
+.. image:: ./scratch_img/cou64.png
    :alt: img
 
 --------------
@@ -262,7 +262,7 @@ Code:
 
 -  Initialize the serial port. Define a variable and assign it to 180.
 
-   .. image:: ./scratch_img/st8png
+   .. image:: ./scratch_img/st84.png
       :alt: img
 
 -  Set the pin correctly, and print the received value.
@@ -317,4 +317,5 @@ this module is not a high-precision detector, so errors may exist.
    :alt: img
 
 --------------
+
 
