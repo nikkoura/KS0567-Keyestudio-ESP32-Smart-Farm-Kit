@@ -1,31 +1,20 @@
-4 Project : Rain Detection System
+4 Projet : Système de détection de pluie
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**NOTE: Sprinkling water on sensors(except steam sensor) may cause a
-short circuit or modules to be out of work. If batteries get wet, even
-explosion may occur. Do be extra careful! For younger users, please
-operate with your parents. To guarantee security, please obey guidances
-and safety regulations.**
+**REMARQUE : Asperger de l’eau sur les capteurs (sauf le capteur de vapeur) peut provoquer un court-circuit ou endommager les modules. Si les piles sont mouillées, il peut même y avoir un risque d’explosion. Soyez extrêmement prudent ! Pour les jeunes utilisateurs, veuillez opérer avec vos parents. Pour garantir la sécurité, veuillez suivre les directives et les règlements de sécurité.**
 
 --------------
 
-In this project, we will create a rain detection system by a steam
-sensor. When rain is detected, ESP32 triggers various actions like
-sending message, activating sprinklers and turning on lights. Through
-this system, rainfall amount can be monitored, and water leakage can
-also be detected on roofs or in buildings.
+Dans ce projet, nous allons créer un système de détection de pluie avec un capteur de vapeur. Lorsqu’il détecte la pluie, l’ESP32 déclenche diverses actions comme l’envoi de messages, l’activation des arroseurs et l’allumage des lumières. Grâce à ce système, la quantité de précipitations peut être surveillée et les fuites d’eau peuvent également être détectées sur les toits ou dans les bâtiments.
 
-Besides, it is easy to connect the steam sensor to ESP32 board, which
-forms a simple but effective rain detection system.
+De plus, il est facile de connecter le capteur de vapeur à la carte ESP32, ce qui forme un système de détection de la pluie simple mais efficace.
 
 .. image:: ./scratch_img/coutpng
    :alt: img
 
 --------------
 
-
-
-1 Flow Diagram
+1 Diagramme de flux
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: ./scratch_img/image-20230607180917475.png
@@ -33,180 +22,153 @@ forms a simple but effective rain detection system.
 
 --------------
 
-
-
-2 Steam Sensor
+2 Capteur de vapeur
 ^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-Steam sensor detects the presence of water, so it is usually used in
-rain detection. If the rain hits the conductive pad on the sensor, it
-will send a signal to the Arduino board.
+Le capteur de vapeur détecte la présence d’eau, il est donc généralement utilisé dans la détection de pluie. Si la pluie touche la plaque conductrice du capteur, il enverra un signal à la carte Arduino.
 
 .. image:: ./scratch_img/cou41.png
    :alt: img
 
 --------------
 
-**Schematic Diagram:**
+**Schéma :**
 
 .. image:: ./scratch_img/couy41.png
    :alt: img
 
-**Parameters:**
+**Paramètres :**
 
--  Voltage: 3~5V
--  Current: 1.5mA
--  Power: 7.5mW
+- Tension : 3~5V
+- Courant : 1,5mA
+- Puissance : 7,5mW
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the steam sensor to io35.**
+**Connecter le capteur de vapeur à io35.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj41.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
--  Initialize the serial port.
+- Initialiser le port série.
 
    .. image:: ./scratch_img/st67.png
       :alt: img
 
--  Read the sensor value at pin io35 and print it per second.
+- Lire la valeur du capteur sur la broche io35 et l’afficher chaque seconde.
 
    .. image:: ./scratch_img/st68.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st69.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-Touch the detection area with a wet finger. The larger the area you
-touched is, the larger the value will be.
+Touchez la zone de détection avec un doigt mouillé. Plus la zone touchée est grande, plus la valeur sera élevée.
 
-You may open the serial monitor to observe the currently detected value
-(range: 0~4095).
+Vous pouvez ouvrir le moniteur série pour observer la valeur détectée actuellement (plage : 0~4095).
 
 .. image:: ./scratch_img/st70.png
    :alt: img
 
 --------------
 
+3 Système de détection de pluie
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Description :**
 
-3 Rain Detection System
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Lorsque le capteur de vapeur détecte la pluie, il envoie un signal à la carte pour déclencher diverses actions, par exemple, le buzzer retentit pour signaler qu’il pleut. Ceci est particulièrement utile pour le jardinage et l’agriculture en extérieur, permettant aux utilisateurs de prendre les précautions nécessaires pour éviter un arrosage excessif.
 
-**Description:**
-
-When the steam sensor detects rain, it sends a signal to the board to
-trigger various actions, for instance, the buzzer alarms to remind that
-it is raining. This is especially useful for outdoor gardening and
-farming, enabling users to take necessary precautions to avoid
-over-watering.
-
-Additionally, this system can be used to detect water leakage to prevent
-damage from water intrusion. Overall, the steam sensor is versatile and
-effective in various applications.
+De plus, ce système peut être utilisé pour détecter les fuites d’eau afin d’éviter des dommages dus à l’infiltration. Globalement, le capteur de vapeur est polyvalent et efficace dans diverses applications.
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the steam sensor to io35 and buzzer to io16.**
+**Connecter le capteur de vapeur à io35 et le buzzer à io16.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le fil jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj42.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Code flow:
+Flux du code :
 
 .. image:: ./scratch_img/flopng
    :alt: img
 
-Code:
+Code :
 
--  Initialize the serial port, and define a variable **item** as the
-   received sensor value.
+- Initialiser le port série, et définir une variable **item** comme la valeur reçue du capteur.
 
    .. image:: ./scratch_img/st71.png
       :alt: img
 
--  Receive the sensor value and print it on the serial monitor.
+- Recevoir la valeur du capteur et l’afficher sur le moniteur série.
 
    .. image:: ./scratch_img/st72.png
       :alt: img
 
--  The received value detected by the sensor is within 800 ~ 1999:
+- La valeur reçue détectée par le capteur est comprise entre 800 ~ 1999 :
 
    .. image:: ./scratch_img/st73.png
       :alt: img
 
--  The received value detected by the sensor is within 2000 ~ 2999:
+- La valeur reçue détectée par le capteur est comprise entre 2000 ~ 2999 :
 
    .. image:: ./scratch_img/st7png
       :alt: img
 
--  The received value detected by the sensor is greater than 3000:
+- La valeur reçue détectée par le capteur est supérieure à 3000 :
 
    .. image:: ./scratch_img/st75.png
       :alt: img
 
--  At the end of code blocks, add a "**No Tone**" to turn off the
-   buzzer.
+- À la fin des blocs de code, ajoutez "**No Tone**" pour éteindre le buzzer.
 
    .. image:: ./scratch_img/st76.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st77.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-The greater the detected value is, the loader the sound emitted by the
-buzzer will be.
+Plus la valeur détectée est élevée, plus le son émis par le buzzer sera fort.
 
 --------------
-
-
 
 4 FAQ
 ^^^^^^^^^
 
-Q: Is the steam sensor waterproof?
+Q : Le capteur de vapeur est-il étanche ?
 
-A: The detection area can be exposed to water, but the wire junctions
-are not waterproof. During the experiment, please pay attention to the
-amount of water not to be too much to prevent short circuit.
+R : La zone de détection peut être exposée à l’eau, mais les jonctions de fils ne sont pas étanches. Lors de l’expérience, faites attention à ne pas mettre trop d’eau pour éviter les courts-circuits.
 
 --------------
 
-Q: Although a long time has elapsed since the sensor detected water, the
-buzzer keeps buzzing.
+Q : Même après un long moment depuis la détection d’eau par le capteur, le buzzer continue de sonner.
 
-A: It keeps buzzing because there are still blots of water in the
-detection area. Please just clean it up.
+R : Il continue de sonner car il reste encore des gouttes d’eau dans la zone de détection. Il suffit de la nettoyer.
 
 --------------
-
-
