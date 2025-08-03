@@ -1,4 +1,3 @@
-```
 6 Projet : Système d'alimentation intelligent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -274,4 +273,5 @@ R : Lors de la détection, veuillez mesurer depuis la tête d'émission. Ici, ce
 
 --------------
 ```
+
 
