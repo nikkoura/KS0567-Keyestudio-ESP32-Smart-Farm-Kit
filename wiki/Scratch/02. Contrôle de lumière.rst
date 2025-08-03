@@ -130,7 +130,7 @@ Flux du code :
 
 Code complet :
 
-.. image:: ./scratch_img/st5.png
+.. image:: ./scratch_img/st54.png
    :alt: img
 
 **Résultat du test :**
