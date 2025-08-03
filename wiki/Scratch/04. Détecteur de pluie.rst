@@ -112,7 +112,7 @@ De plus, ce système peut être utilisé pour détecter les fuites d’eau afin 
 
 Flux du code :
 
-.. image:: ./scratch_img/flopng
+.. image:: ./scratch_img/flo4.png
    :alt: img
 
 Code :
