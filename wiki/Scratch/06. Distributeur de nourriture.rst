@@ -1,13 +1,10 @@
-6 Project: Smart Feeding System
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+6 Projet : Système d'alimentation intelligent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this project, the ultrasonic module detects whether animals are in
-the feeding area, and the Servo automatically opens the feeding box for
-fowls. Besides, incorporating IOT enables remote monitoring of such
-feeding systems which provides much convenience.
+Dans ce projet, le module ultrasonique détecte si des animaux se trouvent dans la zone d'alimentation, et le Servo ouvre automatiquement la boîte d'alimentation pour les volailles. De plus, l'incorporation de l'IOT permet la surveillance à distance de ces systèmes d'alimentation, ce qui offre beaucoup de commodité.
 
-Overall, the automation and remote operation are optimizing the feeding
-process for this system.
+Dans l'ensemble, l'automatisation et l'opération à distance optimisent le processus d'alimentation pour ce système.
 
 .. image:: ./scratch_img/cout6.png
    :alt: img
@@ -16,8 +13,8 @@ process for this system.
 
 
 
-6.1 Flow Diagram
-^^^^^^^^^^^^^^^^^^
+6.1 Diagramme de flux
+^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ./scratch_img/image-20230607085516167.png
    :alt: image-20230607085516167
@@ -27,109 +24,91 @@ process for this system.
 
 
 6.2 Servo
-^^^^^^^^^^^
+^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-**Servo**, also called **RC Servo Device**, is a motor with a feedback.
-Commonly, Servo performs precise position control and outputs high
-torque, which most often appears in robotics projects, RC cars,
-airplanes and aircraft.
+**Servo**, également appelé **dispositif Servo RC**, est un moteur avec retour d'information. En général, le Servo effectue un contrôle de position précis et produit un couple élevé, ce qui apparaît le plus souvent dans des projets de robotique, des voitures RC, des avions et des aéronefs.
 
 .. image:: ./scratch_img/cou64.png
    :alt: img
 
 --------------
 
-**Internal Structure:**
+**Structure interne :**
 
 .. image:: ./scratch_img/cou61.png
    :alt: img
 
--  ① Signal(S): It receives the control signal from microcontroller.
--  ② Potentiometer: the feedback part of the Servo. It measures the
-   position of output shaft.
--  ③ Embedded board (Internal controller): the core of the Servo. It
-   processes external control signal and the feedback signal of position
-   and drives the Servo.
--  ④ DC motor: the execution part. It outputs speed, torque and
-   position.
--  ⑤ Gear system: It scales the outputs from motor to the final output
-   Angle ccording to a certain transmission ratio.
+-  ① Signal(S) : Il reçoit le signal de contrôle du microcontrôleur.
+-  ② Potentiomètre : la partie de retour d'information du Servo. Il mesure la position de l'arbre de sortie.
+-  ③ Carte intégrée (contrôleur interne) : le cœur du Servo. Il traite le signal de contrôle externe et le signal de retour d'information de position et entraîne le Servo.
+-  ④ Moteur CC : la partie d'exécution. Il produit la vitesse, le couple et la position.
+-  ⑤ Système d'engrenage : Il adapte les sorties du moteur à l'angle de sortie final selon un certain rapport de transmission.
 
 --------------
 
-**Drive the Servo:**
+**Contrôler le Servo :**
 
-Signal(S) receives PWM to control the output of Servo, and **the
-position of output shaft directly relies on the duty cycle of PWM**.
+Le Signal(S) reçoit PWM pour contrôler la sortie du Servo, et **la position de l'arbre de sortie dépend directement du rapport cyclique de PWM**.
 
-For instance:
+Par exemple :
 
--  If we send a signal with pulse width of 1.5ms to Servo, its
-   shaft(horn) will revolves to the middle position(90°);
--  If pulse width = ``0.5ms``, the shaft turns to its minimum(0°);
--  If pulse width = ``2.5ms``, the shaft turns to its maximum(180°).
+-  Si nous envoyons un signal avec une largeur d'impulsion de 1,5 ms au Servo, son arbre (corne) tournera à la position médiane (90°) ;
+-  Si la largeur d'impulsion = ``0,5 ms``, l'arbre tourne à son minimum (0°) ;
+-  Si la largeur d'impulsion = ``2,5 ms``, l'arbre tourne à son maximum (180°).
 
-**NOTE: The maximum angle varies from the types of Servos. Some are 170°
-while some are only 90°. In spite of this, Servos usually will move a
-half (of the maximum) if they receive a signal with pulse width of
-1.5ms.**
+**REMARQUE : L'angle maximum varie selon les types de Servos. Certains sont à 170° tandis que d'autres ne sont qu'à 90°. Malgré cela, les Servos se déplaceront généralement de la moitié (du maximum) s'ils reçoivent un signal avec une largeur d'impulsion de 1,5 ms.**
 
 .. image:: ./scratch_img/cou62.png
    :alt: img
 
-The period of a Servo usually lasts 20ms and it produce pulses at a
-frequency of ``50Hz``. Most servos work normally at 40~200Hz.
+La période d'un Servo dure généralement 20 ms et il produit des impulsions à une fréquence de ``50 Hz``. La plupart des servos fonctionnent normalement à 40~200 Hz.
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the Servo to io26.**
+**Connectez le Servo à io26.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to
-GND. Do not reverse them!**
+**Attention : Connectez le jaune à S (Signal), le rouge à V (Alimentation), et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj61.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
--  Initialize the serial port and define a variable **item** with an
-   assignment of 80.
+-  Initialisez le port série et définissez une variable **item** avec une valeur de 80.
 
    .. image:: ./scratch_img/st78.png
       :alt: img
 
--  Set **item** to the angle of Servo from 80° to 180°, rotating 1°
-   every 15ms.
+-  Réglez **item** sur l'angle du Servo de 80° à 180°, en tournant de 1° toutes les 15 ms.
 
    .. image:: ./scratch_img/st79.png
       :alt: img
 
--  Servo rotates 1° every 15ms, from 180° to 80°.
+-  Le Servo tourne de 1° toutes les 15 ms, de 180° à 80°.
 
    .. image:: ./scratch_img/st80.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st81.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-The feeding box is slowly opened and then closed ,which is controllable.
+La boîte d'alimentation s'ouvre lentement puis se ferme, ce qui est contrôlable.
 
-**NOTE: SG90 servo can rotate 180°. As the feeding box is small, 100° of
-rotation is enough to completely close the box.**
+**REMARQUE : Le servo SG90 peut tourner à 180°. Comme la boîte d'alimentation est petite, 100° de rotation suffisent pour fermer complètement la boîte.**
 
--  80°: fully open
--  120°: half open
--  180°: close
+-  80° : complètement ouverte
+-  120° : à moitié ouverte
+-  180° : fermée
 
 .. image:: ./scratch_img/cou63.gif
    :alt: img
@@ -138,86 +117,72 @@ rotation is enough to completely close the box.**
 
 **ATTENTION**
 
-\**Do not put your fingers into the box to avoid nipping! \*\*
+\**Ne mettez pas vos doigts dans la boîte pour éviter de vous pincer ! \*\*
 
-**Do not block the door with something to avoid damaging servo!**
+**Ne bloquez pas la porte avec quelque chose pour éviter d'endommager le servo !**
 
 --------------
 
 
 
-6.3 Ultrasonic Sensor
-^^^^^^^^^^^^^^^^^^^^^^^
+6.3 Capteur ultrasonique
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
 .. image:: ./scratch_img/cou65.png
    :alt: img
 
-**Schematic Diagram:**
+**Schéma :**
 
 .. image:: ./scratch_img/couy61.png
    :alt: img
 
 --------------
 
-The frequency of sound waves that the human can hear is 20Hz ~ 20KHz,
-while ultrasonic waves are beyond that range.
+La fréquence des ondes sonores que l'homme peut entendre est de 20 Hz à 20 KHz, tandis que les ondes ultrasoniques dépassent cette plage.
 
-**Ultrasonic:**
+**Ultrasonique :**
 
 .. image:: ./scratch_img/cou66.png
    :alt: img
 
-Ultrasonic module converts electricity and ultrasonic wave into each
-other by piezoelectric effect, and it also transmits and receives
-ultrasonic wave.
+Le module ultrasonique convertit l'électricité et l'onde ultrasonique l'une dans l'autre par effet piézoélectrique, et il transmet également et reçoit l'onde ultrasonique.
 
-This kind of wave features directivity, strong penetration and easy
-concentration of sound energy.
+Ce type d'onde se caractérise par sa directivité, sa forte pénétration et sa facilité de concentration de l'énergie sonore.
 
 .. image:: ./scratch_img/cou67.png
    :alt: img
 
-In this ultrasonic ranging system, we firstly program on MCU(ESP32
-development board) to generate an original square wave at 40KHz and
-drive the ultrasonic module to emit it. Immediately, the module
-calculates the distance to the object after receiving the reflected
-wave(Echo) amplified and shaped by the circuit. Herein, it records the
-duration of emission and reflection and calculates the distance
-according to the time difference.
+Dans ce système de mesure ultrasonique, nous programmons d'abord sur le MCU (carte de développement ESP32) pour générer une onde carrée originale à 40 KHz et entraîner le module ultrasonique à l'émettre. Immédiatement, le module calcule la distance à l'objet après avoir reçu l'onde réfléchie (Echo) amplifiée et façonnée par le circuit. Ici, il enregistre la durée d'émission et de réflexion et calcule la distance en fonction de la différence de temps.
 
-Simply, MCU controls the module to emit ultrasonic wave which is bounced
-back after encountering obstacles and is received by the module. The
-time difference between them is an important factor in computing the
-distance (the speed of sound propagation in air is 340m/s).
+En résumé, le MCU contrôle le module pour émettre une onde ultrasonique qui est renvoyée après avoir rencontré des obstacles et est reçue par le module. La différence de temps entre elles est un facteur important dans le calcul de la distance (la vitesse de propagation du son dans l'air est de 340 m/s).
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the Echo of Ultrasonic module to io13 and Trig to io12.**
+**Connectez l'Echo du module ultrasonique à io13 et Trig à io12.**
 
-**Attention: Connect yellow to S(Signal) and red to V(Power). Do not
-reverse them!**
+**Attention : Connectez le jaune à S (Signal) et le rouge à V (Alimentation). Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj62.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Set the correct pin: Trig to pin io12; Echo to pin io13.
+Réglez le bon pin : Trig sur le pin io12 ; Echo sur le pin io13.
 
 .. image:: ./scratch_img/st83.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-In this kit, the detection range is within 3~8cm.
+Dans ce kit, la plage de détection est de 3 à 8 cm.
 
-Open the serial monitor, and observe.
+Ouvrez le moniteur série et observez.
 
 .. image:: ./scratch_img/st82.png
    :alt: img
@@ -226,72 +191,66 @@ Open the serial monitor, and observe.
 
 
 
-6.4 Smart Feeding System
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+6.4 Système d'alimentation intelligent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Description:**
+**Description :**
 
-The smart feeding system intelligently feeds domestic fowls via an
-ultrasonic module and a servo. The former detects the distance to
-animals while the later controls to open or close the feeding box. When
-a pet is detected close to the box, servo opens it to feed.
+Le système d'alimentation intelligent nourrit intelligemment les volailles domestiques via un module ultrasonique et un servo. Le premier détecte la distance aux animaux tandis que le second contrôle l'ouverture ou la fermeture de la boîte d'alimentation. Lorsqu'un animal de compagnie est détecté près de la boîte, le servo l'ouvre pour nourrir.
 
 --------------
 
-**Wiring Diagram:**
+**Schéma de câblage :**
 
-**Connect the Echo of Ultrasonic module to io13 and Trig to io12;
-connect the servo to io26.**
+**Connectez l'Echo du module ultrasonique à io13 et Trig à io12 ; connectez le servo à io26.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power) and black to
-GND. Do not reverse them!**
+**Attention : Connectez le jaune à S (Signal), le rouge à V (Alimentation) et le noir à GND. Ne les inversez pas !**
 
 .. image:: ./scratch_img/couj63.png
    :alt: img
 
 --------------
 
-**Test Code:**
+**Code de test :**
 
-Code Flow:
+Flux de code :
 
 .. image:: ./scratch_img/flo6.png
    :alt: img
 
-Code:
+Code :
 
--  Initialize the serial port. Define a variable and assign it to 180.
+-  Initialisez le port série. Définissez une variable et assignez-lui la valeur 180.
 
    .. image:: ./scratch_img/st84.png
       :alt: img
 
--  Set the pin correctly, and print the received value.
+-  Réglez correctement le pin et imprimez la valeur reçue.
 
    .. image:: ./scratch_img/st85.png
       :alt: img
 
--  Determine the detected distance value. If it is within 2cm ~ 7cm, the
-   feeding box will open.
+-  Déterminez la valeur de distance détectée. Si elle est comprise entre 2 cm et 7 cm, la boîte d'alimentation s'ouvrira.
 
    .. image:: ./scratch_img/st86.png
       :alt: img
 
-Complete code:
+Code complet :
 
 .. image:: ./scratch_img/st87.png
    :alt: img
 
-**Test Result:**
+**Résultat du test :**
 
-When an animal is detected, open the feeding box.
+Lorsqu'un animal est détecté, ouvrez la boîte d'alimentation.
 
 --------------
 
 **ATTENTION**
 
-\**Do not put your fingers into the box to avoid nipping! \*\*
+\**Ne mettez pas vos doigts dans la boîte pour éviter de vous pincer ! \*\*
 
-**Do not block the door with something to avoid damaging servo!**
+**Ne bloquez pas la porte avec quelque chose pour éviter d'endommager le servo !**
 
 --------------
 
@@ -300,22 +259,19 @@ When an animal is detected, open the feeding box.
 6.5 FAQ
 ^^^^^^^^^
 
-Q: Servo doesn't work.
+Q : Le Servo ne fonctionne pas.
 
-A: It may be stuck by itself or by wires when mount the bottom plate.
-before installing, please adjust the servo to 180° first. For how,
-please refer to the installation guidance.
+R : Il peut être bloqué par lui-même ou par des fils lors du montage de la plaque inférieure. Avant d'installer, veuillez d'abord ajuster le servo à 180°. Pour cela, veuillez vous référer au guide d'installation.
 
 --------------
 
-Q: The detected distance is inaccurate.
+Q : La distance détectée est inexacte.
 
-A: When detecting, please measure from the transmitting head. Herein,
-this module is not a high-precision detector, so errors may exist.
+R : Lors de la détection, veuillez mesurer depuis la tête d'émission. Ici, ce module n'est pas un détecteur de haute précision, donc des erreurs peuvent exister.
 
 .. image:: ./scratch_img/cou69.png
    :alt: img
 
 --------------
-
+```
 
