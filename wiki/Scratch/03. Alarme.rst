@@ -211,7 +211,7 @@ Jouez de la musique via tone().
 
 Code complet :
 
-.. image:: ./scratch_img/st6png
+.. image:: ./scratch_img/st64.png
    :alt: img
 
 --------------
