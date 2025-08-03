@@ -9,7 +9,7 @@ Dans ce projet, nous allons créer un système de détection de pluie avec un ca
 
 De plus, il est facile de connecter le capteur de vapeur à la carte ESP32, ce qui forme un système de détection de la pluie simple mais efficace.
 
-.. image:: ./scratch_img/coutpng
+.. image:: ./scratch_img/cout4.png
    :alt: img
 
 --------------
