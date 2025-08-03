@@ -1,4 +1,3 @@
-```rst
 7 Projet : Système de Contrôle de Température
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -361,7 +360,4 @@ R : Non. Il détecte la température et l'humidité ambiantes (dans l'air), donc
 #Q : La carte ESP32 se réinitialise lorsque le ventilateur tourne.
 
 R : Lorsque le ventilateur tourne, plus de courant est requis que pour d'autres capteurs, donc la tension et le courant peuvent fluctuer dans le circuit. Surtout au moment du renversement du ventilateur, les fluctuations peuvent être trop importantes, entraînant une réinitialisation en raison d'une tension et d'un courant extrêmement bas sur la carte de développement ESP32.
-
---------------
-```
 
