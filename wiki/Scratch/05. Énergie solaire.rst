@@ -1,130 +1,87 @@
-5 Project: Solar Power System
+5 Projet : Système d'énergie solaire
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ./scratch_img/cou51.png
    :alt: img
 
-
-
 5.1 Description
 ^^^^^^^^^^^^^^^^^
 
-Solar panel converts solar power into electricity for the LED. It is
-suitable for multiple applications, such as outdoor lighting, mobile
-devices charging, and back up power. Hence, you may establish a
-sophisticated and efficient solar power system according to your own
-needs.
+Le panneau solaire convertit l'énergie solaire en électricité pour la LED. Il convient à de nombreuses applications, telles que l'éclairage extérieur, la recharge d'appareils mobiles et l'alimentation de secours. Ainsi, vous pouvez établir un système d'énergie solaire sophistiqué et efficace selon vos propres besoins.
 
 --------------
 
+5.2 Principe de fonctionnement
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-5.2 Working Principle
-^^^^^^^^^^^^^^^^^^^^^^^
-
-**How does solar panel convert solar power into electricity?**
+**Comment le panneau solaire convertit-il l'énergie solaire en électricité ?**
 
 .. image:: ./scratch_img/cou52.png
    :alt: img
 
-The solar panel absorbs light and directly or indirectly converts solar
-radiation into electricity. Compared with ordinary coal power
-generation, solar, wind and water power are more energy-saving and
-environment-friendly.
+Le panneau solaire absorbe la lumière et convertit directement ou indirectement le rayonnement solaire en électricité. Comparés à la production d'énergie au charbon, l'énergie solaire, éolienne et hydraulique sont plus économes en énergie et respectueuses de l'environnement.
 
 --------------
 
-**How does light convert to electricity?**
+**Comment la lumière se transforme-t-elle en électricité ?**
 
-Next, let's talk about the conversion process from inside to outside in
-a solar panel .
+Voyons maintenant le processus de conversion de l'intérieur vers l'extérieur d'un panneau solaire.
 
-**The Sun emits energy in waves with a wide range of wavelengths, from
-ultraviolet to visible to infrared light.**
+**Le Soleil émet de l'énergie sous forme d'ondes avec une large gamme de longueurs d'onde, allant de l'ultraviolet à la lumière visible, puis à l'infrarouge.**
 
--  Wavelength of Ultraviolet: 150~400nm;
--  Wavelength of Visible Light: 400~760nm;
--  Wavelength of Infrared Light: 760~4000nm;
+- Longueur d'onde des ultraviolets : 150~400nm ;
+- Longueur d'onde de la lumière visible : 400~760nm ;
+- Longueur d'onde de l'infrarouge : 760~4000nm ;
 
-**The panel absorbs one of these ranges of wavelength and converts them
-into electricity. But how? Let's move on.**
+**Le panneau absorbe une de ces gammes de longueurs d'onde et les convertit en électricité. Mais comment ? Voyons la suite.**
 
 --------------
 
-**The active part of most solar panel cell is made of a semiconductor
---- silicon(Si).**
+**La partie active de la plupart des cellules de panneau solaire est constituée d'un semi-conducteur — le silicium (Si).**
 
 .. image:: ./scratch_img/cou53.png
    :alt: img
 
-The conductivity of a semiconductor is between a conductor and an
-insulator in atmospheric temperature. Generally, it cannot conduct well,
-yet its conductivity improves in certain conditions.
+La conductivité d’un semi-conducteur se situe entre celle d’un conducteur et d’un isolant à température ambiante. En général, il ne conduit pas bien, mais sa conductivité s'améliore dans certaines conditions.
 
 --------------
 
 .. image:: ./scratch_img/cou5png
    :alt: img
 
-**The diagram above shows the internal structure of the semiconductor in
-solar cell, which is divided into three layers:**
+**Le schéma ci-dessus montre la structure interne du semi-conducteur dans la cellule solaire, qui est divisée en trois couches :**
 
-#. **The top layer (red part)** consists of Silicon(Si) and a little
-   Phosphorus(P). The later carries more electrons than the former,
-   providing sufficient electrons for the top layer. Due to these
-   freely-moving electrons, this layer is conductive, so it is called
-   **Negative or N-type.**
-#. **The middle layer (gray part)** contains too few electrons to
-   conduct.
-#. **The bottom layer (green part)** mainly includes Silicon(Si) and
-   Boron(B). The later carries less electrons than the former, so that a
-   rarely few electrons move freely, causing the missing of electrons
-   which are described as effective positive charge. Therefore, this
-   layer is named **Positive or P-type.**
+#. **La couche supérieure (partie rouge)** se compose de Silicium (Si) et d’un peu de Phosphore (P). Ce dernier transporte plus d'électrons que le premier, fournissant suffisamment d'électrons pour la couche supérieure. Grâce à ces électrons libres, cette couche est conductrice, donc appelée **Négative ou de type N.**
+#. **La couche du milieu (partie grise)** contient trop peu d'électrons pour conduire.
+#. **La couche inférieure (partie verte)** comprend principalement du Silicium (Si) et du Bore (B). Ce dernier transporte moins d'électrons que le premier, donc très peu d'électrons circulent librement, provoquant un manque d’électrons, décrit comme une charge positive effective. Par conséquent, cette couche est appelée **Positive ou de type P.**
 
 .. image:: ./scratch_img/cou55.png
    :alt: img
 
-**Usually, only the middle layer of the solar panel absorbs light waves
-with wavelength of 350~1140nm.** According to the spectrum distribution
-in previous paragraphs, absorptions are long wave ultraviolet, short
-wave infrared and visible light.
+**En général, seule la couche du milieu du panneau solaire absorbe les ondes lumineuses de longueur d'onde de 350~1140nm.** Selon la distribution du spectre mentionnée précédemment, les absorptions sont les ultraviolets longs, les infrarouges courts et la lumière visible.
 
-**The wavelength of ultraviolet is so short that they stops on the
-surface.**
+**La longueur d'onde des ultraviolets est si courte qu'elle s'arrête à la surface.**
 
 .. image:: ./scratch_img/cou56.png
    :alt: img
 
-**The wavelength of infrared light is too long too be absorbed by the
-panel, so they usually passes through or is reflected back.**
+**La longueur d'onde de la lumière infrarouge est trop longue pour être absorbée par le panneau, donc elle passe généralement à travers ou est réfléchie.**
 
 .. image:: ./scratch_img/cou57.png
    :alt: img
 
-The middle layer absorbs light and knocks electrons off from silicon in
-the top layer, leaving them in a free state, and empty electron holes
-are generated at the place where they were before.
+La couche du milieu absorbe la lumière et arrache les électrons du silicium de la couche supérieure, les laissant libres, et des trous électroniques vides sont créés à l’endroit où ils étaient auparavant.
 
 .. image:: ./scratch_img/cou58.gif
    :alt: img
 
-The holes carries a positive charge. Meanwhile, free electrons move
-upwards to reach N-type layer, while holes move downwards to reach
-P-type layer.
+Les trous portent une charge positive. Pendant ce temps, les électrons libres montent vers la couche de type N, tandis que les trous descendent vers la couche de type P.
 
-**In conclusion, electrons in the top and bottom layers are struck out
-after the middle layer absorbing solar energy. Therefore, N-type layer
-carries negative charge as a negative pole, while P-type layer is
-positively charged as a positive pole. In this case, as long as the two
-layers are connected, it conducts.**
+**En conclusion, les électrons des couches supérieure et inférieure sont expulsés après que la couche du milieu ait absorbé l'énergie solaire. Ainsi, la couche de type N porte une charge négative comme pôle négatif, tandis que la couche de type P est chargée positivement comme pôle positif. Dans ce cas, dès que les deux couches sont connectées, cela conduit.**
 
 --------------
 
-If sunlight shines on the solar panel, the above situation will last,
-and a large number of free electrons and holes will be produced. As our
-conclusion goes, electrons move upwards while holes move downwards,
-which forms the two poles and generates current.
+Si la lumière du soleil éclaire le panneau solaire, la situation ci-dessus persiste, et un grand nombre d'électrons libres et de trous sont produits. Comme notre conclusion l’indique, les électrons montent tandis que les trous descendent, ce qui forme les deux pôles et génère du courant.
 
 .. image:: ./scratch_img/cou59.gif
    :alt: img
@@ -134,58 +91,37 @@ which forms the two poles and generates current.
 .. image:: ./scratch_img/cou510.png
    :alt: img
 
-Solar energy is an alternative energy source, which features
-sustainability and cost-effectiveness.
+L’énergie solaire est une source d’énergie alternative, qui se caractérise par sa durabilité et son coût avantageux.
 
-However, the electricity generated by one solar panel can be converted
-into several watts of power, which is enough for a calculator or a
-cellphone charger, yet not nearly enough to run a one-kilowatt toaster.
+Cependant, l’électricité générée par un panneau solaire peut être convertie en quelques watts de puissance, ce qui est suffisant pour une calculatrice ou un chargeur de téléphone, mais pas assez pour faire fonctionner un grille-pain de un kilowatt.
 
-Solar power systems satisfy the needs of different users and benefit for
-environment as well. Combined with Arduino programming, this kind of
-system builds a variety of useful and efficient solar applications, like
-automatic lighting, chargers and smart homes.
+Les systèmes d’énergie solaire répondent aux besoins de différents utilisateurs et sont bénéfiques pour l’environnement. Associés à la programmation Arduino, ce type de système permet de créer une variété d’applications solaires utiles et efficaces, comme l’éclairage automatique, les chargeurs et les maisons intelligentes.
 
-Generally speaking, solar energy promises well for a wonderful and
-sustainable future.
+De manière générale, l’énergie solaire promet un avenir merveilleux et durable.
 
 --------------
 
-
-
-5.3 Parameters
+5.3 Paramètres
 ^^^^^^^^^^^^^^^^
 
--  Voltage: 5V
--  Current: 80mA
--  Power: 400mW
--  Dimensions: 60*60mm
+- Tension : 5V
+- Courant : 80mA
+- Puissance : 400mW
+- Dimensions : 60*60mm
 
 --------------
 
+5.4 Résultat du test
+^^^^^^^^^^^^^^^^^^^^^^
 
+Aucun code n’est requis dans ce projet. Il est important de découvrir cette nouvelle énergie environnementale — l'énergie solaire.
 
-5.4 Test Result
-^^^^^^^^^^^^^^^^^
-
-Codes are not required in this project. Importantly, we learn about the
-new environmental energy --- solar power.
-
-When good illumination is provided, LED will light up in yellow. The
-brighter the light is, the brighter the LED will be.
+Lorsque la lumière est bonne, la LED s’allume en jaune. Plus la lumière est intense, plus la LED sera lumineuse.
 
 --------------
-
-
 
 5.5 FAQ
-^^^^^^^^^
+^^^^^^^^
 
-Q: Why does solar panel still work without sunlight?
-
-A: It works with not only sunlight but also ambient light. The brighter
-the light is, the greater the voltage will be, and the lighter the LED
-will be.
-
---------------
-
+Q : Pourquoi le panneau solaire fonctionne-t-il encore sans lumière du soleil ?
+A : Il fonctionne non seulement avec la lumière du soleil mais aussi avec la lumière ambiante. Plus la lumière est intense, plus la tension sera élevée et plus la LED sera lumineuse.
