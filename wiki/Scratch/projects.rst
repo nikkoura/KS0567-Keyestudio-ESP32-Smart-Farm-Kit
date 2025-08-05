@@ -2,7 +2,6 @@
 
 KidsBlock Tutorials
 ===================
-
 .. _4.-Projects:
 
 Projets
@@ -11,11 +10,11 @@ Projets
 4.1 Projet : Système d'éclairage
 
 
-**Commençons notre premier projet, le système d&#x27;éclairage.**
+**Commençons notre premier projet, le système d'éclairage.**
 
 --------------
 
-Allumer une LED est l&#x27;une des pratiques Arduino les plus fondamentales.
+Allumer une LED est l'une des pratiques Arduino les plus fondamentales.
 
 Cette leçon de démarrage est conçue pour les débutants afin de comprendre la programmation matérielle et logicielle sur la carte de développement ESP32 et de maîtriser les connaissances de base en circuits et en programmation.
 
@@ -24,9 +23,9 @@ Cette leçon de démarrage est conçue pour les débutants afin de comprendre la
 
 Par conséquent, notre guide tutoriel est simple. Et ce projet intriguant peut être appliqué dans des scénarios réels à la maison ou au bureau.
 
-Dans ce projet, vous aurez appris les connexions et paramètres de base de la carte de développement ESP32 dans la programmation Arduino. De plus, certaines fonctions vous seront également présentées, comme allumer/éteindre une LED via le niveau de sortie d&#x27;une broche numérique ou par un bouton.
+Dans ce projet, vous aurez appris les connexions et paramètres de base de la carte de développement ESP32 dans la programmation Arduino. De plus, certaines fonctions vous seront également présentées, comme allumer/éteindre une LED via le niveau de sortie d'une broche numérique ou par un bouton.
 
-En somme, il s&#x27;agit d&#x27;un tutoriel de niveau débutant pour poser les bases des pratiques Arduino ultérieures.
+En somme, il s'agit d'un tutoriel de niveau débutant pour poser les bases des pratiques Arduino ultérieures.
 
 --------------
 
@@ -47,9 +46,9 @@ En somme, il s&#x27;agit d&#x27;un tutoriel de niveau débutant pour poser les b
 
 **Description :**
 
-LED, abréviation de Light Emitting Diode (diode électroluminescente), est un semi-conducteur à état solide qui convertit l&#x27;énergie électrique en lumière visible, c&#x27;est pourquoi on l&#x27;appelle aussi éclairage à état solide.
+LED, abréviation de Light Emitting Diode (diode électroluminescente), est un semi-conducteur à état solide qui convertit l'énergie électrique en lumière visible, c'est pourquoi on l'appelle aussi éclairage à état solide.
 
-Lorsque le courant traverse une LED, elle s&#x27;allume.
+Lorsque le courant traverse une LED, elle s'allume.
 
 **LED diverses :**
 
@@ -58,7 +57,7 @@ Lorsque le courant traverse une LED, elle s&#x27;allume.
 
 --------------
 
-Le **module LED** est un dispositif de sortie, dont la luminosité et les clignotements peuvent être contrôlés. Pour l&#x27;utilisation, vous devez simplement le brancher directement dans les broches de sortie numérique de la carte de développement.
+Le **module LED** est un dispositif de sortie, dont la luminosité et les clignotements peuvent être contrôlés. Pour l'utilisation, vous devez simplement le brancher directement dans les broches de sortie numérique de la carte de développement.
 
 .. image:: ./scratch_img/cou12.png
    :alt: img
@@ -67,7 +66,7 @@ Le **module LED** est un dispositif de sortie, dont la luminosité et les cligno
 
 **Principe de fonctionnement :**
 
-Lorsque S est à un niveau haut, le transistor Q1 est en conduction, et la tension VCC passe à travers la LED pour l&#x27;allumer.
+Lorsque S est à un niveau haut, le transistor Q1 est en conduction, et la tension VCC passe à travers la LED pour l'allumer.
 
 .. image:: ./scratch_img/couy1.png
    :alt: img
@@ -98,22 +97,22 @@ Lorsque S est à un niveau haut, le transistor Q1 est en conduction, et la tensi
    .. image:: ./scratch_img/st1.png
       :alt: img
 
-- Faites glisser |image19| de |image20| vers la zone d&#x27;édition de code. Les blocs de code ne s&#x27;exécutent que lorsqu&#x27;ils sont dans cette zone.
+- Faites glisser |image19| de |image20| vers la zone d'édition de code. Les blocs de code ne s'exécutent que lorsqu'ils sont dans cette zone.
 
    .. image:: ./scratch_img/st12.png
       :alt: img
 
-- Avec ce bloc, lors du démarrage de la carte de développement, le code s&#x27;exécutera.
+- Avec ce bloc, lors du démarrage de la carte de développement, le code s'exécutera.
 
    .. image:: ./scratch_img/st11.png
       :alt: img
 
-- Dans |image21|, faites glisser &quot;\ **forever**\ &quot; et collez-le sous le bloc précédent. Le bloc &quot;\ **forever**\ &quot; indique une boucle.
+- Dans |image21|, faites glisser "\ **forever**\ " et collez-le sous le bloc précédent. Le bloc "\ **forever**\ " indique une boucle.
 
    .. image:: ./scratch_img/st20.png
       :alt: img
 
-- Faites glisser un bloc &quot;**LED pin output**&quot; de |image22| et collez-le dans &quot;\ **forever**\ &quot;. Réglez la broche sur IO27 et le niveau de sortie sur HIGH, de sorte que la broche LED continuera à sortir un niveau haut.
+- Faites glisser un bloc "**LED pin output**" de |image22| et collez-le dans "\ **forever**\ ". Réglez la broche sur IO27 et le niveau de sortie sur HIGH, de sorte que la broche LED continuera à sortir un niveau haut.
 
 .. image:: ./scratch_img/st21.png
    :alt: img
@@ -121,19 +120,19 @@ Lorsque S est à un niveau haut, le transistor Q1 est en conduction, et la tensi
 .. image:: ./scratch_img/st22-1.png
    :alt: img
 
-- Ajoutez un délai de 1s. Dupliquez le bloc &quot;**LED pin output**&quot; mais réglez la sortie sur LOW, et ajoutez également un délai. Alors la LED s&#x27;allumera et s&#x27;éteindra en circulation.
+- Ajoutez un délai de 1s. Dupliquez le bloc "**LED pin output**" mais réglez la sortie sur LOW, et ajoutez également un délai. Alors la LED s'allumera et s'éteindra en circulation.
 
    .. image:: ./scratch_img/st22.png
       :alt: img
 
 **Résultat du test :**
 
-La LED clignote par seconde, car io27 sur la carte ESP32 sort alternativement un niveau haut et bas chaque seconde. De plus, diverses applications interactives peuvent également être réalisées via une LED, comme une LED respirante, des lumières à écoulement d&#x27;eau et un feu de police clignotant.
+La LED clignote par seconde, car io27 sur la carte ESP32 sort alternativement un niveau haut et bas chaque seconde. De plus, diverses applications interactives peuvent également être réalisées via une LED, comme une LED respirante, des lumières à écoulement d'eau et un feu de police clignotant.
 
 .. container:: table-wrapper
 
    ============== ========
-   Niveau d&#x27;alimentation Résultat
+   Niveau d'alimentation Résultat
    ============== ========
    HIGH           LED allumée
    LOW            LED éteinte
@@ -145,9 +144,9 @@ La LED clignote par seconde, car io27 sur la carte ESP32 sort alternativement un
 
 **Description :**
 
-Les interfaces IO du MCU (arduino UNO, ESP32 et Raspberry Pi Pico) ne sortent que des signaux numériques (niveau haut ou bas). Par exemple, dans l&#x27;expérience précédente (allumer une LED), les sorties numériques ne sont que HIGH(3,3V) et LOW(0V).
+Les interfaces IO du MCU (arduino UNO, ESP32 et Raspberry Pi Pico) ne sortent que des signaux numériques (niveau haut ou bas). Par exemple, dans l'expérience précédente (allumer une LED), les sorties numériques ne sont que HIGH(3,3V) et LOW(0V).
 
-Si le MCU sort un niveau haut de 3,3V ou un niveau bas de 0V, la tension d&#x27;entrée devrait être à 0~3,3V. Ainsi, PWM (**Pulse Width Modulation**) est nécessaire pour sortir différentes valeurs de tension, ce qui est appelé &quot;sortie analogique&quot;.
+Si le MCU sort un niveau haut de 3,3V ou un niveau bas de 0V, la tension d'entrée devrait être à 0~3,3V. Ainsi, PWM (**Pulse Width Modulation**) est nécessaire pour sortir différentes valeurs de tension, ce qui est appelé "sortie analogique".
 
 .. image:: ./scratch_img/cou1k1.png
    :alt: img
@@ -156,15 +155,15 @@ Si le MCU sort un niveau haut de 3,3V ou un niveau bas de 0V, la tension d&#x27;
 
 **Connaissances :**
 
-Qu&#x27;est-ce que PWM ?
+Qu'est-ce que PWM ?
 
 PWM contient trois éléments : Fréquence(Hz), Période, Cycle de service(%).
 
 - **Fréquence PWM (f) :** le nombre de fois que le signal change de haut à bas et revient à haut en une seconde. Généralement parlant, la fréquence est le nombre de périodes PWM en une seconde.
 
-- **Période PWM (T) :** Période = 1 / Fréquence (T=1/f, et 1 signifie 1 seconde). Par exemple : f = 50Hz, donc T = 20ms, ce qui implique qu&#x27;il y a 50 fois de période par seconde.
+- **Période PWM (T) :** Période = 1 / Fréquence (T=1/f, et 1 signifie 1 seconde). Par exemple : f = 50Hz, donc T = 20ms, ce qui implique qu'il y a 50 fois de période par seconde.
 
-- **Cycle de service PWM :** le rapport de temps de HIGH à toute la période. Si Période = 10ms et 8ms est le temps de largeur d&#x27;impulsion, le niveau bas occupe 2ms, donc le cycle de service = 8/(8+2) = 80%.
+- **Cycle de service PWM :** le rapport de temps de HIGH à toute la période. Si Période = 10ms et 8ms est le temps de largeur d'impulsion, le niveau bas occupe 2ms, donc le cycle de service = 8/(8+2) = 80%.
 
 .. image:: ./scratch_img/cou1k2.png
    :alt: img
@@ -184,12 +183,12 @@ PWM contient trois éléments : Fréquence(Hz), Période, Cycle de service(%).
    .. image:: ./scratch_img/st25.png
       :alt: img
 
-- Faites glisser un bloc &quot;**forever**&quot; et collez un bloc &quot;**repeat**&quot; dedans. Réglez le nombre de répétitions à 255.
+- Faites glisser un bloc "**forever**" et collez un bloc "**repeat**" dedans. Réglez le nombre de répétitions à 255.
 
    .. image:: ./scratch_img/st26.png
       :alt: img
 
-- Faites glisser un bloc &quot;**variable mode**&quot; dans &quot;**repeat**&quot; et réglez le mode sur &quot;\ **++**\ &quot;, ce qui signifie que **item** augmentera de 1 après chaque exécution.
+- Faites glisser un bloc "**variable mode**" dans "**repeat**" et réglez le mode sur "\ **++**\ ", ce qui signifie que **item** augmentera de 1 après chaque exécution.
 
    .. image:: ./scratch_img/st27.png
       :alt: img
@@ -214,19 +213,19 @@ PWM contient trois éléments : Fréquence(Hz), Période, Cycle de service(%).
       .. image:: ./scratch_img/st31.png
          :alt: img
 
-- Ajoutez un délai à 0,01s, de sorte que la LED s&#x27;allumera progressivement plutôt que tout d&#x27;un coup.
+- Ajoutez un délai à 0,01s, de sorte que la LED s'allumera progressivement plutôt que tout d'un coup.
 
    .. image:: ./scratch_img/st32.png
       :alt: img
 
-- Dupliquez le bloc &quot;**repeat**&quot; comme suit, mais réglez le mode sur &quot;**－－**&quot;, qui diminue la variable **item** à chaque fois. Et la LED s&#x27;assombrira progressivement.
+- Dupliquez le bloc "**repeat**" comme suit, mais réglez le mode sur "**－－**", qui diminue la variable **item** à chaque fois. Et la LED s'assombrira progressivement.
 
    .. image:: ./scratch_img/st33.png
       :alt: img
 
 **Résultat du test**
 
-La LED s&#x27;allume et s&#x27;assombrit progressivement ; elle respire uniformément.
+La LED s'allume et s'assombrit progressivement ; elle respire uniformément.
 
 .. image:: ./scratch_img/st34.gif
    :alt: img
@@ -240,7 +239,7 @@ La LED s&#x27;allume et s&#x27;assombrit progressivement ; elle respire uniform�
 
 **Description**
 
-Le **module bouton** est un dispositif d&#x27;entrée. Le MCU lit son niveau d&#x27;alimentation pour détecter si le bouton est pressé.
+Le **module bouton** est un dispositif d'entrée. Le MCU lit son niveau d'alimentation pour détecter si le bouton est pressé.
 
 .. image:: ./scratch_img/cou13.png
    :alt: img
@@ -262,8 +261,8 @@ Le **module bouton** est un dispositif d&#x27;entrée. Le MCU lit son niveau d&#
 
 **Le principe du module bouton est un circuit contrôlé par ce bouton.**
 
-- **Lorsque le bouton est pressé**, le circuit est en état fermé de sorte que le courant passe à travers le bouton vers GND, ce qui fait que la broche d&#x27;entrée numérique détecte un niveau bas.
-- **Lorsque le bouton est relâché**, le circuit est coupé et le niveau de la broche augmente en raison d&#x27;une résistance de tirage, ce qui fait que la broche numérique détecte un niveau haut.
+- **Lorsque le bouton est pressé**, le circuit est en état fermé de sorte que le courant passe à travers le bouton vers GND, ce qui fait que la broche d'entrée numérique détecte un niveau bas.
+- **Lorsque le bouton est relâché**, le circuit est coupé et le niveau de la broche augmente en raison d'une résistance de tirage, ce qui fait que la broche numérique détecte un niveau haut.
 
 --------------
 
@@ -280,17 +279,17 @@ Le **module bouton** est un dispositif d&#x27;entrée. Le MCU lit son niveau d&#
 
 **Code de test**
 
-- Initialisez d&#x27;abord le port série, et réglez le débit en bauds à 115200.
+- Initialisez d'abord le port série, et réglez le débit en bauds à 115200.
 
    .. image:: ./scratch_img/st36.png
       :alt: img
 
-- Réglez la broche sur IO5 et le mode sur entrée. Ce qui suit est un bloc &quot;**forever**&quot;.
+- Réglez la broche sur IO5 et le mode sur entrée. Ce qui suit est un bloc "**forever**".
 
    .. image:: ./scratch_img/st37.png
       :alt: img
 
-- Lisez le niveau d&#x27;alimentation de la broche numérique 5. Si c&#x27;est 1, imprimez 1. Sinon, imprimez 0.
+- Lisez le niveau d'alimentation de la broche numérique 5. Si c'est 1, imprimez 1. Sinon, imprimez 0.
 
    .. image:: ./scratch_img/st38.png
       :alt: img
@@ -309,7 +308,7 @@ Lorsque le bouton est relâché, la valeur est 1 ; si vous pressez le bouton, el
 .. image:: ./scratch_img/st39.png
    :alt: img
 
-Dans KidsBlock, nous pouvons lire l&#x27;état de la broche d&#x27;entrée numérique en programmant pour détecter si le bouton est pressé. Ainsi, de nombreuses applications interactives peuvent être réalisées via un module bouton, comme l&#x27;allumage/extinction de LED et l&#x27;ajustement de la luminosité d&#x27;affichage.
+Dans KidsBlock, nous pouvons lire l'état de la broche d'entrée numérique en programmant pour détecter si le bouton est pressé. Ainsi, de nombreuses applications interactives peuvent être réalisées via un module bouton, comme l'allumage/extinction de LED et l'ajustement de la luminosité d'affichage.
 
 --------------
 
@@ -329,15 +328,15 @@ Un bouton à verrouillage automatique ne ressort pas lorsque vous le pressez san
    .. image:: ./scratch_img/st41.png
       :alt: img
 
-- Déterminez si le bouton est pressé. Si c&#x27;est le cas, décalez la valeur de **button** et imprimez-la.
+- Déterminez si le bouton est pressé. Si c'est le cas, décalez la valeur de **button** et imprimez-la.
 
    .. image:: ./scratch_img/st43.png
       :alt: img
 
 - Délai de 0,01s pour éliminer les vibrations du bouton.
 
-- Si un état fermé est détecté au bouton, un délai sera exécuté pour éliminer les **vibrations du porche avant**. Généralement, le délai est dans les 5ms～10ms (les propriétés mécaniques décident). Après que les vibrations disparaissent, vérifiez à nouveau l&#x27;état du bouton. Si le niveau d&#x27;état fermé est toujours maintenu, il est confirmé qu&#x27;il y a un bouton pressé.
-- Lorsqu&#x27;un bouton relâché est détecté, un délai de 5ms～10ms devrait également se produire pour supprimer les **vibrations du porche arrière**, de sorte que le programme pour le bouton puisse être exécuté.
+- Si un état fermé est détecté au bouton, un délai sera exécuté pour éliminer les **vibrations du porche avant**. Généralement, le délai est dans les 5ms～10ms (les propriétés mécaniques décident). Après que les vibrations disparaissent, vérifiez à nouveau l'état du bouton. Si le niveau d'état fermé est toujours maintenu, il est confirmé qu'il y a un bouton pressé.
+- Lorsqu'un bouton relâché est détecté, un délai de 5ms～10ms devrait également se produire pour supprimer les **vibrations du porche arrière**, de sorte que le programme pour le bouton puisse être exécuté.
 
 - Lorsque le bouton est pressé, **button** égale 1. Pressez-le à nouveau, **button** passe à 0, alternativement.
 
@@ -350,7 +349,7 @@ Code complet :
 
 Téléchargez le code et ouvrez le moniteur série.
 
-Lorsque vous pressez le bouton une fois, 1 sera affiché. Si vous pressez le bouton pour la deuxième fois, la valeur devient 0. Maintenant, un bouton commun possède la fonction d&#x27;un bouton à verrouillage automatique.
+Lorsque vous pressez le bouton une fois, 1 sera affiché. Si vous pressez le bouton pour la deuxième fois, la valeur devient 0. Maintenant, un bouton commun possède la fonction d'un bouton à verrouillage automatique.
 
 .. image:: ./scratch_img/st46.png
    :alt: img
@@ -359,14 +358,14 @@ Lorsque vous pressez le bouton une fois, 1 sera affiché. Si vous pressez le bou
 
 .. _4.1.3-Lighting-Control:
 
-4.1.3 Contrôle d&#x27;éclairage
+4.1.3 Contrôle d'éclairage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
-Dans les expériences de base ci-dessus, nous remodelons un bouton à verrouillage automatique pour contrôler la LED. Un bouton à verrouillage automatique convient à toutes les situations où un certain état doit être maintenu, par exemple, lorsque la LED doit s&#x27;allumer pendant une longue période, la carte de développement ESP32 est requise pour certaines opérations.
+Dans les expériences de base ci-dessus, nous remodelons un bouton à verrouillage automatique pour contrôler la LED. Un bouton à verrouillage automatique convient à toutes les situations où un certain état doit être maintenu, par exemple, lorsque la LED doit s'allumer pendant une longue période, la carte de développement ESP32 est requise pour certaines opérations.
 
-Dans cette expérience, nous adopterons la carte Arduino ESP32 pour vous guider à implémenter un système d&#x27;éclairage et simuler des scènes de la vie réelle pour contrôler la lumière via le bouton.
+Dans cette expérience, nous adopterons la carte Arduino ESP32 pour vous guider à implémenter un système d'éclairage et simuler des scènes de la vie réelle pour contrôler la lumière via le bouton.
 
 --------------
 
@@ -390,20 +389,20 @@ Flux de code :
 
 Code complet :
 
-Basé sur le code pour le bouton à verrouillage automatique, nous ajoutons des blocs &quot;**LED pin output**&quot;.
+Basé sur le code pour le bouton à verrouillage automatique, nous ajoutons des blocs "**LED pin output**".
 
 .. image:: ./scratch_img/st47.png
    :alt: img
 
 **Résultat du test :**
 
-**Lorsque vous pressez le bouton une fois, la LED s&#x27;allume ; si vous pressez à nouveau, la LED s&#x27;éteint. Cette opération est une boucle, qui est cohérente avec le principe d&#x27;éclairage dans la réalité.**
+**Lorsque vous pressez le bouton une fois, la LED s'allume ; si vous pressez à nouveau, la LED s'éteint. Cette opération est une boucle, qui est cohérente avec le principe d'éclairage dans la réalité.**
 
 --------------
 
-Dans ce chapitre, nous avons démontré comment programmer et contrôler via KidsBlock, et nous avons appris les bases ainsi que certains concepts logiciels et matériels dans des expériences telles que le bouton à verrouillage automatique et le système de contrôle d&#x27;éclairage.
+Dans ce chapitre, nous avons démontré comment programmer et contrôler via KidsBlock, et nous avons appris les bases ainsi que certains concepts logiciels et matériels dans des expériences telles que le bouton à verrouillage automatique et le système de contrôle d'éclairage.
 
-Ceux-ci sont essentiels pour un bon développeur KidsBlock. Ensuite, nous vous guiderons pour continuer à explorer plus d&#x27;applications et de compétences, que vous soyez débutant ou vétéran. Nous espérons que vous apprécierez le plaisir et les défis pendant l&#x27;apprentissage de KidsBlock. Continuons !
+Ceux-ci sont essentiels pour un bon développeur KidsBlock. Ensuite, nous vous guiderons pour continuer à explorer plus d'applications et de compétences, que vous soyez débutant ou vétéran. Nous espérons que vous apprécierez le plaisir et les défis pendant l'apprentissage de KidsBlock. Continuons !
 
 --------------
 
@@ -412,15 +411,15 @@ Ceux-ci sont essentiels pour un bon développeur KidsBlock. Ensuite, nous vous g
 4.1.5 FAQ
 ^^^^^^^^^
 
-**Q : La LED ne s&#x27;allume pas après avoir téléchargé le code.**
+**Q : La LED ne s'allume pas après avoir téléchargé le code.**
 
-R : Veuillez vérifier si la broche définie dans le code est cohérente avec celle de vos câblages. Si elles sont incompatibles, veuillez l&#x27;ajuster en vous référant au code.
+R : Veuillez vérifier si la broche définie dans le code est cohérente avec celle de vos câblages. Si elles sont incompatibles, veuillez l'ajuster en vous référant au code.
 
 --------------
 
 **Q : Le bouton fonctionne parfois mais parfois non.**
 
-R : Veuillez modifier le délai d&#x27;élimination des vibrations à une valeur appropriée.
+R : Veuillez modifier le délai d'élimination des vibrations à une valeur appropriée.
 
 .. code:: c++
 
@@ -587,9 +586,9 @@ R : Augmentez la valeur déterminée de la photorésistance. Dans notre exemple,
 4.3 Projet : Système d'alarme
 
 
-Dans ce projet, nous utilisons un capteur de mouvement PIR et un buzzer pour constituer un système d&#x27;alarme, qui peut être contrôlé par la carte de développement ESP32.
+Dans ce projet, nous utilisons un capteur de mouvement PIR et un buzzer pour constituer un système d'alarme, qui peut être contrôlé par la carte de développement ESP32.
 
-Comment ça marche ? Les signaux électriques sont détectés et lus par le capteur de mouvement PIR grâce à la programmation sur Arduino IDE, puis il détermine s&#x27;il y a une personne. Si c&#x27;est le cas, le buzzer alarme. De cette façon, ce système d&#x27;alarme coûte beaucoup moins cher pour les familles et les bureaux.
+Comment ça marche ? Les signaux électriques sont détectés et lus par le capteur de mouvement PIR grâce à la programmation sur Arduino IDE, puis il détermine s'il y a une personne. Si c'est le cas, le buzzer alarme. De cette façon, ce système d'alarme coûte beaucoup moins cher pour les familles et les bureaux.
 
 --------------
 
@@ -610,7 +609,7 @@ Comment ça marche ? Les signaux électriques sont détectés et lus par le capt
 
 **Description :**
 
-Un capteur de mouvement PIR détecte la présence d&#x27;une personne en détectant la chaleur dégagée par le corps humain.
+Un capteur de mouvement PIR détecte la présence d'une personne en détectant la chaleur dégagée par le corps humain.
 
 De plus, ce capteur est petit et facile à utiliser.
 
@@ -647,7 +646,7 @@ De plus, ce capteur est petit et facile à utiliser.
 
 **Code de test :**
 
-Lisez la valeur à la broche IO23 pour déterminer s&#x27;il y a un mouvement humain.
+Lisez la valeur à la broche IO23 pour déterminer s'il y a un mouvement humain.
 
 .. image:: ./scratch_img/image-20250423083305405.png
    :alt: image-20250423083305405
@@ -656,9 +655,9 @@ Lisez la valeur à la broche IO23 pour déterminer s&#x27;il y a un mouvement hu
 
 Ouvrez le moniteur série.
 
-Lorsque quelqu&#x27;un est dans la zone, **Someone** est affiché sur le moniteur, et la LED rouge sur le capteur s&#x27;éteint. Cependant, s&#x27;il n&#x27;y a personne, **No one** sera imprimé et la LED sera toujours allumée.
+Lorsque quelqu'un est dans la zone, **Someone** est affiché sur le moniteur, et la LED rouge sur le capteur s'éteint. Cependant, s'il n'y a personne, **No one** sera imprimé et la LED sera toujours allumée.
 
-**ATTENTION** : Le capteur de mouvement PIR n&#x27;est pas capable de pénétrer les objets, donc veuillez ne pas couvrir le capteur lors de la détection de mouvements.
+**ATTENTION** : Le capteur de mouvement PIR n'est pas capable de pénétrer les objets, donc veuillez ne pas couvrir le capteur lors de la détection de mouvements.
 
 .. image:: ./scratch_img/st57.png
    :alt: img
@@ -681,19 +680,19 @@ Un buzzer est un avertisseur sonore électronique, qui émet des sons avec diff�
 
 Un buzzer consiste en un **dispositif de vibration** et un **dispositif de résonance**. Et il y a deux catégories : Buzzers passifs et buzzers actifs.
 
-- Un **Buzzer passif** ne peut pas ``vibrer`` pour émettre du son lui-même, à moins de mettre un signal d&#x27;``onde carrée`` avec une certaine fréquence. De plus, le son émis varie en raison de la différente fréquence de l&#x27;onde carrée, donc un buzzer passif peut simuler des mélodies.
+- Un **Buzzer passif** ne peut pas ``vibrer`` pour émettre du son lui-même, à moins de mettre un signal d'``onde carrée`` avec une certaine fréquence. De plus, le son émis varie en raison de la différente fréquence de l'onde carrée, donc un buzzer passif peut simuler des mélodies.
 
-- Une onde carrée analogique peut être générée en changeant le niveau d&#x27;alimentation aux broches. Par exemple, après que le niveau haut dure 500ms, il passe à un niveau bas pendant 500ms supplémentaires puis à un niveau haut à nouveau...
+- Une onde carrée analogique peut être générée en changeant le niveau d'alimentation aux broches. Par exemple, après que le niveau haut dure 500ms, il passe à un niveau bas pendant 500ms supplémentaires puis à un niveau haut à nouveau...
 - \**Nous conduisons le buzzer via une onde carrée dans les 200~5000Hz, et nous pouvons calculer la fréquence(f) : *f=1/T* ; T est la période (le temps total de niveau haut et bas). \*\*
 
 .. image:: ./scratch_img/cou35.png
    :alt: img
 
-- Un **Buzzer actif** est capable d&#x27;émettre du son automatiquement sans motivateur externe, car il inclut un circuit de conduite qui n&#x27;a besoin que d&#x27;``alimentation DC``. Cependant, son son est plat avec une fréquence relativement fixe.
+- Un **Buzzer actif** est capable d'émettre du son automatiquement sans motivateur externe, car il inclut un circuit de conduite qui n'a besoin que d'``alimentation DC``. Cependant, son son est plat avec une fréquence relativement fixe.
 
 --------------
 
-**Dans cette expérience, un buzzer passif est appliqué pour &quot;jouer de la musique&quot;.**
+**Dans cette expérience, un buzzer passif est appliqué pour "jouer de la musique".**
 
 --------------
 
@@ -725,9 +724,9 @@ Un buzzer consiste en un **dispositif de vibration** et un **dispositif de réso
 
 **Méthode 1 : Onde carrée analogique**
 
-Un buzzer passif est conduit par des ondes carrées, donc nous stimulons l&#x27;onde.
+Un buzzer passif est conduit par des ondes carrées, donc nous stimulons l'onde.
 
-Une onde carrée analogique peut être générée en changeant le niveau d&#x27;alimentation de la broche : niveau haut pendant 500us et niveau bas pendant 500us. Donc, le buzzer émettra du son. Aussi, les durées peuvent ajuster le volume du son.
+Une onde carrée analogique peut être générée en changeant le niveau d'alimentation de la broche : niveau haut pendant 500us et niveau bas pendant 500us. Donc, le buzzer émettra du son. Aussi, les durées peuvent ajuster le volume du son.
 
 Veuillez essayer 1000us, 1500us, 3000us…Quelle est la différence ?
 
@@ -739,7 +738,7 @@ Code :
 .. image:: ./scratch_img/st58.png
    :alt: img
 
-- Dans la fonction de délai, l&#x27;unité de temps us micro-secondes. Donc le bloc suivant représente un délai de 500ms.
+- Dans la fonction de délai, l'unité de temps us micro-secondes. Donc le bloc suivant représente un délai de 500ms.
 
 .. image:: ./scratch_img/st59.png
    :alt: img
@@ -748,7 +747,7 @@ Selon la formule :
 
 .. math:: f = 1/T
 
-Ainsi, 500us est la durée, et nous pouvons calculer la fréquence = 2kHz, c&#x27;est-à-dire que le niveau haut et bas alternent 2000 fois par seconde.
+Ainsi, 500us est la durée, et nous pouvons calculer la fréquence = 2kHz, c'est-à-dire que le niveau haut et bas alternent 2000 fois par seconde.
 
 --------------
 
@@ -758,9 +757,9 @@ Nous adoptons les blocs de code Speaker\ |image24| pour conduire le buzzer à vi
 
 **Les blocs haut-parleur génèrent un signal PWM avec une certaine fréquence pour conduire le buzzer à vibrer,** et la durée et le ton sont contrôlés par des paramètres connexes.
 
-Il y a deux façons de définir la durée. L&#x27;une est d&#x27;ajuster les paramètres de la fonction tone() pour définir une durée, et l&#x27;autre est d&#x27;adopter une fonction noTone() pour arrêter directement le son. Si vous ne définissez pas de durée dans tone(), le signal sonore sera toujours généré à moins qu&#x27;un noTone() l&#x27;arrête.
+Il y a deux façons de définir la durée. L'une est d'ajuster les paramètres de la fonction tone() pour définir une durée, et l'autre est d'adopter une fonction noTone() pour arrêter directement le son. Si vous ne définissez pas de durée dans tone(), le signal sonore sera toujours généré à moins qu'un noTone() l'arrête.
 
-Pour la carte ESP32, un seul son peut être produit à la fois. Si une broche d&#x27;ESP32 génère un signal sonore via tone(), il n&#x27;est pas acceptable d&#x27;émettre du son par cette fonction sur une autre broche.
+Pour la carte ESP32, un seul son peut être produit à la fois. Si une broche d'ESP32 génère un signal sonore via tone(), il n'est pas acceptable d'émettre du son par cette fonction sur une autre broche.
 
 **Table des tons**
 
@@ -769,7 +768,7 @@ Pour la carte ESP32, un seul son peut être produit à la fois. Si une broche d&
 
 Code :
 
-- Faites glisser un bloc &quot;**Tone**&quot; de |image25| comme montré ci-dessous, et réglez la broche sur IO16.
+- Faites glisser un bloc "**Tone**" de |image25| comme montré ci-dessous, et réglez la broche sur IO16.
 
    .. image:: ./scratch_img/st61.png
       :alt: img
@@ -791,7 +790,7 @@ Code complet :
 
 **Résultat du test :**
 
-Méthode 1 : Le buzzer continue d&#x27;émettre du son.
+Méthode 1 : Le buzzer continue d'émettre du son.
 
 Méthode 2 : Le buzzer alarme via la fonction tone().
 
@@ -810,10 +809,10 @@ Code complet :
 
 .. _4.3.4-Alarm-System:
 
-4.3.4 Système d&#x27;alarme
+4.3.4 Système d'alarme
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Dans cette expérience, nous construirons un système d&#x27;alarme par un capteur de mouvement PIR, un buzzer et une LED. Lorsque le capteur détecte un mouvement, le buzzer émet du son et la LED clignote pour rappeler une intrusion.
+Dans cette expérience, nous construirons un système d'alarme par un capteur de mouvement PIR, un buzzer et une LED. Lorsque le capteur détecte un mouvement, le buzzer émet du son et la LED clignote pour rappeler une intrusion.
 
 --------------
 
@@ -842,7 +841,7 @@ Code complet :
 
 **Résultat du test :**
 
-Téléchargez le code et le système d&#x27;alarme commence à fonctionner. Lorsqu&#x27;il détecte un mouvement, le buzzer alarme et la LED clignote.
+Téléchargez le code et le système d'alarme commence à fonctionner. Lorsqu'il détecte un mouvement, le buzzer alarme et la LED clignote.
 
 --------------
 
@@ -853,13 +852,13 @@ Téléchargez le code et le système d&#x27;alarme commence à fonctionner. Lors
 
 **Q : Les tons du buzzer ne sont pas précis avec les vrais.**
 
-R : Ce buzzer régulier ne fait que stimuler les tons, donc il n&#x27;est pas capable de répondre aux exigences professionnelles. Si vous voulez des tons standard, un haut-parleur plus spécialisé est requis.
+R : Ce buzzer régulier ne fait que stimuler les tons, donc il n'est pas capable de répondre aux exigences professionnelles. Si vous voulez des tons standard, un haut-parleur plus spécialisé est requis.
 
 --------------
 
 **Q : Le capteur de mouvement PIR donne de fausses informations.**
 
-R : Ce capteur de mouvement PIR n&#x27;est pas non plus professionnel.
+R : Ce capteur de mouvement PIR n'est pas non plus professionnel.
 
 Veuillez garantir les situations suivantes pour éviter une fausse information :
 
@@ -1040,7 +1039,7 @@ R : Il continue de bourdonner car il y a encore des gouttes d'eau dans la zone d
 4.5.1 Description
 ^^^^^^^^^^^^^^^^^
 
-Le panneau solaire convertit l&#x27;énergie solaire en électricité pour la LED. Il convient à de multiples applications, telles que l&#x27;éclairage extérieur, la charge d&#x27;appareils mobiles et l&#x27;alimentation de secours. Par conséquent, vous pouvez établir un système d&#x27;énergie solaire sophistiqué et efficace selon vos propres besoins.
+Le panneau solaire convertit l'énergie solaire en électricité pour la LED. Il convient à de multiples applications, telles que l'éclairage extérieur, la charge d'appareils mobiles et l'alimentation de secours. Par conséquent, vous pouvez établir un système d'énergie solaire sophistiqué et efficace selon vos propres besoins.
 
 --------------
 
@@ -1049,35 +1048,35 @@ Le panneau solaire convertit l&#x27;énergie solaire en électricité pour la LE
 4.5.2 Principe de fonctionnement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Comment le panneau solaire convertit-il l&#x27;énergie solaire en électricité ?**
+**Comment le panneau solaire convertit-il l'énergie solaire en électricité ?**
 
 .. image:: ./scratch_img/cou52.png
    :alt: img
 
-Le panneau solaire absorbe la lumière et convertit directement ou indirectement le rayonnement solaire en électricité. Comparé à la génération d&#x27;électricité au charbon ordinaire, l&#x27;énergie solaire, éolienne et hydraulique sont plus économes en énergie et respectueuses de l&#x27;environnement.
+Le panneau solaire absorbe la lumière et convertit directement ou indirectement le rayonnement solaire en électricité. Comparé à la génération d'électricité au charbon ordinaire, l'énergie solaire, éolienne et hydraulique sont plus économes en énergie et respectueuses de l'environnement.
 
 --------------
 
 **Comment la lumière se convertit-elle en électricité ?**
 
-Ensuite, parlons du processus de conversion de l&#x27;intérieur vers l&#x27;extérieur dans un panneau solaire.
+Ensuite, parlons du processus de conversion de l'intérieur vers l'extérieur dans un panneau solaire.
 
-**Le Soleil émet de l&#x27;énergie en ondes avec une large gamme de longueurs d&#x27;onde, de l&#x27;ultraviolet au visible à la lumière infrarouge.**
+**Le Soleil émet de l'énergie en ondes avec une large gamme de longueurs d'onde, de l'ultraviolet au visible à la lumière infrarouge.**
 
-- Longueur d&#x27;onde de l&#x27;ultraviolet : 150~400nm ;
-- Longueur d&#x27;onde de la lumière visible : 400~760nm ;
-- Longueur d&#x27;onde de la lumière infrarouge : 760~4000nm ;
+- Longueur d'onde de l'ultraviolet : 150~400nm ;
+- Longueur d'onde de la lumière visible : 400~760nm ;
+- Longueur d'onde de la lumière infrarouge : 760~4000nm ;
 
-**Le panneau absorbe une de ces gammes de longueur d&#x27;onde et les convertit en électricité. Mais comment ? Continuons.**
+**Le panneau absorbe une de ces gammes de longueur d'onde et les convertit en électricité. Mais comment ? Continuons.**
 
 --------------
 
-**La partie active de la plupart des cellules de panneau solaire est faite d&#x27;un semi-conducteur --- silicium(Si).**
+**La partie active de la plupart des cellules de panneau solaire est faite d'un semi-conducteur --- silicium(Si).**
 
 .. image:: ./scratch_img/cou53.png
    :alt: img
 
-La conductivité d&#x27;un semi-conducteur est entre un conducteur et un isolant à température atmosphérique. Généralement, il ne peut pas bien conduire, mais sa conductivité s&#x27;améliore dans certaines conditions.
+La conductivité d'un semi-conducteur est entre un conducteur et un isolant à température atmosphérique. Généralement, il ne peut pas bien conduire, mais sa conductivité s'améliore dans certaines conditions.
 
 --------------
 
@@ -1086,37 +1085,37 @@ La conductivité d&#x27;un semi-conducteur est entre un conducteur et un isolant
 
 **Le diagramme ci-dessus montre la structure interne du semi-conducteur dans la cellule solaire, qui est divisée en trois couches :**
 
-1. **La couche supérieure (partie rouge)** consiste en Silicium(Si) et un peu de Phosphore(P). Ce dernier porte plus d&#x27;électrons que le premier, fournissant suffisamment d&#x27;électrons pour la couche supérieure. En raison de ces électrons se déplaçant librement, cette couche est conductrice, donc elle est appelée **Négative ou type N.**
-2. **La couche du milieu (partie grise)** contient trop peu d&#x27;électrons pour conduire.
-3. **La couche inférieure (partie verte)** inclut principalement Silicium(Si) et Bore(B). Ce dernier porte moins d&#x27;électrons que le premier, de sorte que très peu d&#x27;électrons se déplacent librement, causant le manque d&#x27;électrons qui sont décrits comme charge positive effective. Par conséquent, cette couche est nommée **Positive ou type P.**
+1. **La couche supérieure (partie rouge)** consiste en Silicium(Si) et un peu de Phosphore(P). Ce dernier porte plus d'électrons que le premier, fournissant suffisamment d'électrons pour la couche supérieure. En raison de ces électrons se déplaçant librement, cette couche est conductrice, donc elle est appelée **Négative ou type N.**
+2. **La couche du milieu (partie grise)** contient trop peu d'électrons pour conduire.
+3. **La couche inférieure (partie verte)** inclut principalement Silicium(Si) et Bore(B). Ce dernier porte moins d'électrons que le premier, de sorte que très peu d'électrons se déplacent librement, causant le manque d'électrons qui sont décrits comme charge positive effective. Par conséquent, cette couche est nommée **Positive ou type P.**
 
 .. image:: ./scratch_img/cou55.png
    :alt: img
 
-**Habituellement, seule la couche du milieu du panneau solaire absorbe les ondes lumineuses avec une longueur d&#x27;onde de 350~1140nm.** Selon la distribution spectrale dans les paragraphes précédents, les absorptions sont l&#x27;ultraviolet à onde longue, l&#x27;infrarouge à onde courte et la lumière visible.
+**Habituellement, seule la couche du milieu du panneau solaire absorbe les ondes lumineuses avec une longueur d'onde de 350~1140nm.** Selon la distribution spectrale dans les paragraphes précédents, les absorptions sont l'ultraviolet à onde longue, l'infrarouge à onde courte et la lumière visible.
 
-**La longueur d&#x27;onde de l&#x27;ultraviolet est si courte qu&#x27;elle s&#x27;arrête à la surface.**
+**La longueur d'onde de l'ultraviolet est si courte qu'elle s'arrête à la surface.**
 
 .. image:: ./scratch_img/cou56.png
    :alt: img
 
-**La longueur d&#x27;onde de la lumière infrarouge est trop longue pour être absorbée par le panneau, donc elle passe généralement à travers ou est réfléchie.**
+**La longueur d'onde de la lumière infrarouge est trop longue pour être absorbée par le panneau, donc elle passe généralement à travers ou est réfléchie.**
 
 .. image:: ./scratch_img/cou57.png
    :alt: img
 
-La couche du milieu absorbe la lumière et frappe les électrons du silicium dans la couche supérieure, les laissant dans un état libre, et des trous d&#x27;électrons vides sont générés à l&#x27;endroit où ils étaient avant.
+La couche du milieu absorbe la lumière et frappe les électrons du silicium dans la couche supérieure, les laissant dans un état libre, et des trous d'électrons vides sont générés à l'endroit où ils étaient avant.
 
 .. image:: ./scratch_img/cou58.gif
    :alt: img
 
 Les trous portent une charge positive. Pendant ce temps, les électrons libres se déplacent vers le haut pour atteindre la couche de type N, tandis que les trous se déplacent vers le bas pour atteindre la couche de type P.
 
-**En conclusion, les électrons dans les couches supérieure et inférieure sont frappés après que la couche du milieu absorbe l&#x27;énergie solaire. Par conséquent, la couche de type N porte une charge négative comme pôle négatif, tandis que la couche de type P est chargée positivement comme pôle positif. Dans ce cas, tant que les deux couches sont connectées, cela conduit.**
+**En conclusion, les électrons dans les couches supérieure et inférieure sont frappés après que la couche du milieu absorbe l'énergie solaire. Par conséquent, la couche de type N porte une charge négative comme pôle négatif, tandis que la couche de type P est chargée positivement comme pôle positif. Dans ce cas, tant que les deux couches sont connectées, cela conduit.**
 
 --------------
 
-Si la lumière du soleil brille sur le panneau solaire, la situation ci-dessus durera, et un grand nombre d&#x27;électrons libres et de trous seront produits. Comme notre conclusion va, les électrons se déplacent vers le haut tandis que les trous se déplacent vers le bas, ce qui forme les deux pôles et génère du courant.
+Si la lumière du soleil brille sur le panneau solaire, la situation ci-dessus durera, et un grand nombre d'électrons libres et de trous seront produits. Comme notre conclusion va, les électrons se déplacent vers le haut tandis que les trous se déplacent vers le bas, ce qui forme les deux pôles et génère du courant.
 
 .. image:: ./scratch_img/cou59.gif
    :alt: img
@@ -1126,13 +1125,13 @@ Si la lumière du soleil brille sur le panneau solaire, la situation ci-dessus d
 .. image:: ./scratch_img/cou510.png
    :alt: img
 
-L&#x27;énergie solaire est une source d&#x27;énergie alternative, qui présente la durabilité et la rentabilité.
+L'énergie solaire est une source d'énergie alternative, qui présente la durabilité et la rentabilité.
 
-Cependant, l&#x27;électricité générée par un panneau solaire peut être convertie en plusieurs watts de puissance, ce qui est suffisant pour une calculatrice ou un chargeur de téléphone portable, mais pas assez pour faire fonctionner un grille-pain d&#x27;un kilowatt.
+Cependant, l'électricité générée par un panneau solaire peut être convertie en plusieurs watts de puissance, ce qui est suffisant pour une calculatrice ou un chargeur de téléphone portable, mais pas assez pour faire fonctionner un grille-pain d'un kilowatt.
 
-Les systèmes d&#x27;énergie solaire satisfont les besoins de différents utilisateurs et bénéficient également à l&#x27;environnement. Combiné avec la programmation Arduino, ce type de système construit une variété d&#x27;applications solaires utiles et efficaces, comme l&#x27;éclairage automatique, les chargeurs et les maisons intelligentes.
+Les systèmes d'énergie solaire satisfont les besoins de différents utilisateurs et bénéficient également à l'environnement. Combiné avec la programmation Arduino, ce type de système construit une variété d'applications solaires utiles et efficaces, comme l'éclairage automatique, les chargeurs et les maisons intelligentes.
 
-Généralement parlant, l&#x27;énergie solaire promet bien pour un avenir merveilleux et durable.
+Généralement parlant, l'énergie solaire promet bien pour un avenir merveilleux et durable.
 
 --------------
 
@@ -1153,9 +1152,9 @@ Généralement parlant, l&#x27;énergie solaire promet bien pour un avenir merve
 4.5.4 Résultat du test
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Les codes ne sont pas requis dans ce projet. Importamment, nous apprenons sur la nouvelle énergie environnementale --- l&#x27;énergie solaire.
+Les codes ne sont pas requis dans ce projet. Importamment, nous apprenons sur la nouvelle énergie environnementale --- l'énergie solaire.
 
-Lorsqu&#x27;un bon éclairage est fourni, la LED s&#x27;allumera en jaune. Plus la lumière est brillante, plus la LED sera brillante.
+Lorsqu'un bon éclairage est fourni, la LED s'allumera en jaune. Plus la lumière est brillante, plus la LED sera brillante.
 
 --------------
 
@@ -1172,7 +1171,7 @@ R : Il fonctionne non seulement avec la lumière du soleil mais aussi avec la lu
 
 .. _4.6-Project:-Smart-Feeding-System:
 
-4.6 Projet : Système d&#x27;alimentation intelligent
+4.6 Projet : Système d'alimentation intelligent
 Dans ce projet, le module ultrasonique détecte si les animaux sont dans la zone d'alimentation, et le Servo ouvre automatiquement la boîte d'alimentation pour les volailles. De plus, l'incorporation de l'IOT permet la surveillance à distance de tels systèmes d'alimentation qui fournit beaucoup de commodité.
 
 Dans l'ensemble, l'automatisation et l'opération à distance optimisent le processus d'alimentation pour ce système.
